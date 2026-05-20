@@ -1,0 +1,375 @@
+* { 
+  margin: 0;
+  padding: 0;
+  font-family: "Playfair Display", serif;
+
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.header{
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.712)), url(./public/assets/fundophelia.png);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+
+}
+nav{
+  display: flex;
+  padding: 20px 6%;
+  padding: 24px;
+  justify-content: space-between;
+}
+nav img{
+  width: 250px;
+}
+
+.nav-links{
+  flex: 1;
+  text-align: right;
+}
+
+.nav-links ul li{
+  list-style: none;
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
+}
+.nav-links ul li a{
+  color: #b47e3b;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+.nav-links ul li a:hover{
+    content: #fff;
+    border: 1px solid #b47e3b;
+    background-color: #b47e3b2f;
+    transform: translateY(-2px);
+}
+.nav-links ul l::hover::after{
+  display: none;
+}
+.text-box{
+  width: 90%;
+  color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+.text-box h1{
+  font-size: 40px;
+  font-family: 'Playfair Display', serif;
+}
+.showgirl {
+  font-family: "League Gothic", serif;
+  font-size: 40px;
+  color: #ffd665; /* dourado — estética das Eras */
+}
+.text-box p{
+  margin: 10px 0 40px;
+  font-size: 30px;
+  color: beige;
+}
+.sobre-btn{
+  display: inline-block;
+  text-decoration: none;
+  color: beige;
+  border: 1px solid beige;
+  padding: 12px 34px;
+  font-size: 13px;
+  background: transparent;
+  position: relative;
+  cursor: pointer;
+  border-radius: 8px;
+} 
+.sobre-btn:hover{
+  border: 1px solid beige;
+  background: beige;
+  transition: 1s;
+}
+
+/* -------- SOBRE O PROJETO -----------------*/
+.heading{
+  text-align: center;
+  font-size: 4rem;
+  color: #ffffff;
+  padding: 1rem;
+  margin: 2rem 0;
+  background: rgba(255, 51, 153, 05);
+}
+
+.heading{
+  font-size: 3rem;
+}
+.mirrorball {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  vertical-align: middle; /* ✅ alinha com o texto */
+  display: inline-block;
+  animation: girar 4s linear infinite;
+}
+.projeto .row{
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  background: linear-gradient(135deg, #251503, #fdeee0);
+  border-radius: 24px;
+  padding: 40px;
+  margin: 60px auto;
+  width: 80%;
+  box-shadow: 0 8px 32px rgba(180, 126, 59, 0.767);
+  border: 1px solid rgb(180, 126, 59);
+}
+.projeto .row .video-container{
+  flex: 1 1 40rem;
+  position: relative;
+}
+.projeto .row .video-container video{
+  width: 80%;
+  border: 3px solid #251503;
+  border-radius: 5rem;
+  box-shadow: 0 .5 rem 1rem  rgba(0, 0, 0,.1 );
+  height: 80%;
+  object-fit: cover;
+
+  /* flex-basis: 31%;
+  background: #573202a1;
+  border-radius: 10px;
+  margin-bottom: 5%;
+  padding: 20px 12px;
+  box-sizing: border-box;*/
+}
+.projeto .row .content{
+  flex: 1 1 40rem;
+  background: #c4beb61a;
+  border-radius: 10px;
+  margin-bottom: 5%;
+  padding: 70px 30px;
+  box-sizing: border-box;
+}
+.about .row .video-container h3{
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  font-size: 3rem;
+  background: #14141421;
+  width: 100%;
+  padding: 1rem 2rem;
+  text-align: center;
+  mix-blend-mode: screen;
+
+} 
+.projeto .row .content h3{
+  font-size: 2rem;
+  color: #000000;
+}
+.about .row .content p{
+  font-size: 1.5 rem;
+  color: #ffffff;
+  padding: 5rem 0;
+  padding-top: 1rem;
+  line-height: 1.5;
+}
+/* ------------------------------ BOXES ----------------------------- */
+.boxes{
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 100px;
+}
+h1{
+
+  font-size: 80px;
+  font-weight: 600;
+  font-family: "Italianno", cursive;
+}
+p{
+  color: #000000;;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 22px;
+  padding: 10px;
+  font-family: 'Outfit', sans-serif;
+}
+.row{
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+.boxes-col{
+  flex-basis: 31%;
+  background: #5732028c;
+  border-radius: 10px;
+  margin-bottom: 5%;
+  padding: 20px 12px;
+  box-sizing: border-box;
+  transition: 0.5s;
+}
+h3{
+  text-align: center;
+  font-weight: 600;
+  margin: 10px;
+}
+.boxes-col:hover{
+  box-shadow: 0 0 20px 0px rgb(0, 0, 0);
+}
+
+.boxes {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 100px;
+
+}
+/* lalala q n sabemos */
+.lalala{
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 80px;
+}
+.lalala .row{
+  gap: 24px;
+  align-items: stretch;
+}
+.lalala-col{
+  flex-basis: 31%;
+  border-radius: 16px;
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+}
+.lalala-col img{
+  width: 100%;
+  height: 150%;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+} 
+.lalala h1{
+  font-size: 40px;
+}
+.layer{
+  background: transparent;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+}
+
+.layer:hover{
+  background: rgba(99, 56, 1, 0.7);
+}
+.layer h3{
+  width: 80% ;
+  height: 5%;
+  font-weight: 500;
+  color: #fff;
+  font-size: 20px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  opacity: 0;
+  transition: 1s;
+}
+.layer:hover h3{
+  bottom: 49%;
+  opacity: 1;
+}
+/* FOOTER */
+.footer {
+  background-color: #33230c;
+  height: 50px;
+  color: #fff;
+  display: flex;
+  font-size: 15px;
+}
+
+.footer .container {
+  justify-content: center;
+  text-align: center;
+}
+.footer .container .version {
+  font-size: 12px;
+}
+.footer h4{
+  justify-content: center;
+  text-align: center;
+}
+
+
+
+/*----- sla oq é isso ----- */
+
+
+.simulador {
+  color: white;
+}
+
+.simulador .container {
+  flex-direction: column;
+  overflow: scroll; 
+  height: var(--tamanho-simulador);
+}
+
+/* ALERTA */
+
+#alerta {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.mensagem-alarme {
+  background-color: white;
+  border-radius: 5px;
+  width: 300px;
+  height: 80px;
+  margin: 10px;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.mensagem-alarme h3 {
+  font-size: 14px;
+  margin: 0;
+}
+
+.mensagem-alarme .informacao {
+  width: 66%;
+}
+
+.alarme-sino {
+  width: 48px;
+  height: 48px;
+  animation-name: bell;
+  animation-duration: 4s;
+  background-image: url('https://cdn-icons-png.flaticon.com/512/1157/1157000.png');
+  background-size: cover;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bell {
+  0%   {transform: rotate(25deg)}
+  25%  {transform: rotate(-25deg)}
+  50%  {transform: rotate(25deg)}
+  75%  {transform: rotate(-25deg)}
+  100% {transform: rotate(25deg)}
+}
