@@ -7,7 +7,7 @@
 .header{
   min-height: 100vh;
   width: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.712)), url(./public/assets/taylorfundoquadro.png);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.712)), url(../assets/imgs/taylorfundoquadro.png);
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -58,7 +58,7 @@ nav img{
   width: 100%;
   height: auto;
   background-image: linear-gradient(rgba(0, 0, 0, 0.712), rgba(0, 0, 0, 0.712)), 
-                    url(./public/assets/taylorfundoquadro.png);
+                    url(../assets/imgs/taylorfundoquadro.png);
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
