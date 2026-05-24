@@ -14,10 +14,9 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-    <!------------------ navbar --------->
+    <!--------- navbar --------->
     <nav>
         <a href="index.html">
             <img src="./assets/logomirrorball.png" alt="mirrorball insights">
@@ -41,26 +40,22 @@
         </div>
     </div>
 
-    <!-- ÁREA CADASTRO -->
+    <!-- cadastro -->
     <div class="login">
-
         <div class="card-login">
 
-            <!-- TOPO -->
+            <!-- topo -->
             <div class="card-topo">
-
                 <div class="card-icone">
                     <svg viewBox="0 0 24 24">
                         <circle cx="12" cy="8" r="4"/>
                         <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
                     </svg>
                 </div>
-
                 <h2>Crie sua conta</h2>
                 <p class="subtitulo">
                     Entre para ter acesso completo ao mirrorball insights!
                 </p>
-
             </div>
 
             <!-- FORMULÁRIO -->
@@ -94,7 +89,7 @@
 
             <!-- LOADING -->
             <div id="div_aguardar" class="loading-div">
-                <img src="./assets/circle-loading.gif" alt="Carregando...">
+                <img src="../public/assets/icon/circle-loading.gif" alt="Carregando...">
             </div>
 
             <div id="div_erros_login"></div>
@@ -147,19 +142,6 @@
       setInterval(sumirMensagem, 5000);
     }
 
-    // Verificando se o código de ativação é de alguma empresa cadastrada
-    for (let i = 0; i < listaEmpresasCadastradas.length; i++) {
-      if (listaEmpresasCadastradas[i].codigo_ativacao == codigoVar) {
-        idEmpresaVincular = listaEmpresasCadastradas[i].id
-        console.log("Código de ativação válido.");
-        break;
-      } else {
-        cardErro.style.display = "block";
-        mensagem_erro.innerHTML = "(Mensagem de erro para código inválido)";
-        finalizarAguardar();
-      }
-    }
-
     // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {
       method: "POST",
@@ -172,7 +154,6 @@
         nomeServer: nomeVar,
         emailServer: emailVar,
         senhaServer: senhaVar,
-        idEmpresaVincularServer: idEmpresaVincular
       }),
     })
       .then(function (resposta) {
@@ -200,26 +181,6 @@
       });
 
     return false;
-  }
-
-  // Listando empresas cadastradas 
-  function listar() {
-    fetch("/empresas/listar", {
-      method: "GET",
-    })
-      .then(function (resposta) {
-        resposta.json().then((empresas) => {
-          empresas.forEach((empresa) => {
-            listaEmpresasCadastradas.push(empresa);
-
-            console.log("listaEmpresasCadastradas")
-            console.log(listaEmpresasCadastradas[0].codigo_ativacao)
-          });
-        });
-      })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-      });
   }
 
   function sumirMensagem() {

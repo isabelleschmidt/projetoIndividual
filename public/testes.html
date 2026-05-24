@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mirrorball insights. | Taylor Swift ou Shakespeare?</title>
-    <link rel="stylesheet" href="./css/testes.css"
+    <link rel="stylesheet" href="./css/testes.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
@@ -57,20 +57,16 @@
 
             <div id="opcoes">
                 <span class="opcao-wrapper">
-                    <input type="radio" id="primeiraOpcao" name="option" value="alternativaA" />
-                    <label for="primeiraOpcao" id="labelOpcaoUm">Taylor Swift</label>
-                </span>
-                <span class="opcao-wrapper">
-                    <input type="radio" id="segundaOpcao" name="option" value="alternativaB" />
-                    <label for="segundaOpcao" id="labelOpcaoDois">Shakespeare</label>
+                <label for="primeiraOpcao" id="labelOpcaoUm"></label>   <!-- ← sem texto fixo -->
+                <label for="segundaOpcao" id="labelOpcaoDois"></label>
                 </span>
             </div>
 
             <div id="botoes">
-                <button onclick="submeter()" id="btnSubmeter">Confirmar resposta</button>
-                <button onclick="avancar()" id="btnProx" disabled>Próxima questão →</button>
-                <button onclick="tentarNovamente()" id="btnTentarNovamente" disabled>Jogar novamente</button>
-            </div>
+    <button onclick="submeter()" id="btnSubmeter">Confirmar resposta</button>  <!-- ← adicione esta linha -->
+    <button onclick="avancar()" id="btnProx" disabled>Próxima questão →</button>
+    <button onclick="tentarNovamente()" id="btnTentarNovamente" disabled>Jogar novamente</button>
+</div>
 
         </div>
     </div>

@@ -1,4 +1,4 @@
-*, *::before, *::after {
+*::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -24,13 +24,12 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #1a1209;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.712)), url(../assets/imgs/fundologin.png);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.712)), url(../assets/imgs/tayviolao.png);
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
     position: relative;   
 }
- 
 /* ── NAVBAR ── */
 nav {
     display: flex;
@@ -109,7 +108,6 @@ nav img {
     line-height: 1.4;
     font-family: 'Outfit', sans-serif;
 }
- 
 /* ----------- card login ------------- */
 .card-login {
     background: rgba(30, 20, 10, 0.75);

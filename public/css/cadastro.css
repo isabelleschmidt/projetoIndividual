@@ -24,7 +24,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #1a1209;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.712)), url(../assets/imgs/fundologin.png);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.712)), url(../assets/imgs/tayviolao.png);
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
