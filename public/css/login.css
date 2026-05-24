@@ -24,7 +24,11 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #1a1209;
+<<<<<<< HEAD
     background-image: linear-gradient(rgba(0, 0, 0, 0.712)), url(../assets/imgs/tayviolao.png);
+=======
+    background-image: linear-gradient(rgba(0, 0, 0, 0.712)), url(../assets/imgs/);
+>>>>>>> 9431f2fe4d3cd1571c255532ae49b5e55be798e9
     background-position: center;
     background-size: cover;
     background-attachment: fixed;

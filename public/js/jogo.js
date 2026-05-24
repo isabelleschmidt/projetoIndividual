@@ -17,7 +17,7 @@ function iniciarQuiz() {
 
     preencherQuestao(0)
     resetarBotoes()
-}
+}   
 
 
 // --- Preenche a tela com a questão do índice recebido ---
