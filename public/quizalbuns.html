@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mirrorball insights. | Qual álbum da Taylor Swift você seria?</title>
+
+    <link rel="stylesheet" href="./css/quizalbuns.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html">
+            <img src="./assets/logomirrorball.png" alt="mirrorball insights">
+        </a>
+
+        <div class="nav-links">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="trajetoria.html">Trajetória</a></li>
+                <li><a href="eras.html">Eras</a></li>
+                <li><a href="testes.html">Testes</a></li>
+                <li><a href="login.html">Entrar</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- TELA INICIAL -->
+
+    <div id="telaInicial">
+
+        <div class="capa">
+
+            <div class="capa-decoracao"></div>
+
+            <h1 class="titulo-principal">
+                Qual álbum da Taylor Swift você seria?
+            </h1>
+
+            <p class="subtitulo">
+                Descubra qual era combina mais com sua personalidade.
+            </p>
+
+            <button onclick="iniciarQuiz()">
+                Começar Quiz
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- TELA JOGO -->
+
+    <div id="telaJogo" style="display:none">
+
+        <div id="caixaQuestao">
+
+            <div id="infoQuestao">
+                Questão
+                <span id="spanNumeroDaQuestaoAtual">1</span>
+                de
+                <span id="qtdQuestoes">10</span>
+            </div>
+
+            <div id="citacao">
+                <p id="spanQuestaoExibida"></p>
+            </div>
+            <p id="instrucao">
+                <em>Escolha a alternativa que mais combina com você.</em>
+            </p>
+
+            <div id="opcoes">
+
+                <span class="opcao-wrapper">
+                    <input type="radio" id="primeiraOpcao" name="option" value="alternativaA">
+                    <label for="primeiraOpcao" id="labelOpcaoUm"></label>
+                </span>
+
+                <span class="opcao-wrapper">
+                    <input type="radio" id="segundaOpcao" name="option" value="alternativaB">
+                    <label for="segundaOpcao" id="labelOpcaoDois"></label>
+                </span>
+
+                <span class="opcao-wrapper">
+                    <input type="radio" id="terceiraOpcao" name="option" value="alternativaC">
+                    <label for="terceiraOpcao" id="labelOpcaoTres"></label>
+                </span>
+
+                <span class="opcao-wrapper">
+                    <input type="radio" id="quartaOpcao" name="option" value="alternativaD">
+                    <label for="quartaOpcao" id="labelOpcaoQuatro"></label>
+                </span>
+
+            </div>
+            <div id="botoes">
+                <button onclick="submeter()">
+                Próxima questão →
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="telaFinal" style="display:none">
+        <div class="capa resultado">
+            <div class="capa-decoracao"></div>
+            <h2>Resultado:</h2>
+            <p id="spanPontuacaoFinal" class="pontuacao-final-texto"></p>
+            <p id="msgFinal" class="mensagem-final"></p>
+            <button onclick="tentarNovamente()">Jogar novamente</button>
+        </div>
+    </div>
+    <script src="./js/questoespersonalidade.js"></script>
+    <script src="./js/personalidade.js"></script>
+</body>
+</html>

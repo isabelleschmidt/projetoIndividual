@@ -39,7 +39,7 @@ const listaDeQuestoes = [
         pergunta: "O mundo todo é um palco.",
         alternativaA: "Taylor Swift",
         alternativaB: "Shakespeare",
-        alternativaCorreta: "alternativaB"   // ← era "alternativaA" no original — corrigi a resposta também
+        alternativaCorreta: "alternativaB"
     },
 
     {
@@ -65,7 +65,7 @@ const listaDeQuestoes = [
 
     {
         pergunta: "Algumas quedas servem para que levantemos mais felizes.",
-        alternativaA: "Taylor Swift",   // ← havia "Taylor Swifr" (typo)
+        alternativaA: "Taylor Swift",   
         alternativaB: "Shakespeare",
         alternativaCorreta: "alternativaB"
     }

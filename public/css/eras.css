@@ -1,125 +1,269 @@
-* { 
-  margin: 0;
-  padding: 0;
+* {
   font-family: "Playfair Display", serif;
   box-sizing: border-box;
   background: transparent;
 }
-.header{
-  min-height: 100vh;
-  width: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.712)), url(../assets/imgs/tayeras.png);
-  background-position: center;
-  background-size: cover;
-  position: relative;
-}
+
 
 /* ------------- navbar ---------*/
 nav {
-    display: flex;
-    padding: 24px 6%;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    z-index: 10;
-}
-nav img {
-    width: 250px;
-}
-.nav-links {
-    flex: 1;
-    text-align: right;
-}
-.nav-links ul li {
-    list-style: none;
-    display: inline-block;
-    padding: 8px 12px;
-    position: relative;
-}
-.nav-links ul li a {
-    color: #b47e3b;
-    text-decoration: none;
-    font-size: 15px;
-    font-family: 'Playfair Display', sans-serif;
-    padding: 8px 16px;
-    border-radius: 20px;
-    border: 1px solid transparent;
-    transition: all 0.3s ease;
-}
-.nav-links ul li a:hover {
-    border: 1px solid #b47e3b;
-    background-color: rgba(180, 126, 59, 0.18);
-    transform: translateY(-2px);
-}
- 
- 
-/* -------------------- CARDS ----------------------------------*/
-
-
-.carousel {
-  width: 100%;
-  overflow: hidden;
-  padding: 50px 0;
-}
-
-.track {
   display: flex;
-  gap: 20px;
-  width: max-content;
-
-  animation: slide 30s linear infinite;
-}
-
-.card {
+  padding: 24px 6%;
+  justify-content: space-between;
+  align-items: center;
   position: relative;
-  min-width: 250px;
-  height: 350px;
+  z-index: 10;
+}
+
+nav img {
+  width: 250px;
+}
+
+.nav-links {
+  flex: 1;
+  text-align: right;
+}
+
+.nav-links ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
+}
+
+.nav-links ul li a {
+  color: #b47e3b;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: 'Playfair Display', sans-serif;
+  padding: 8px 16px;
   border-radius: 20px;
-  overflow: hidden;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.nav-links ul li a:hover {
+  border: 1px solid #b47e3b;
+  background-color: rgba(180, 126, 59, 0.18);
+  transform: translateY(-2px);
+}
+
+
+:root {
+  --cor-fundo: #0d0d0d;
+  --cor-texto: #f5e6cc;
+  --cor-suave: #888;
+  --cor-destaque: #d4af37;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.712), rgba(0, 0, 0, 0.712)), url(../assets/imgs/tayeras.png);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: var(--cor-texto);
+    font-family: 'Outfit', sans-serif;
+    height: 90vh;
+}
+
+
+.albuns-hero {
+  text-align: center;
+  padding: 80px 24px 48px;
+}
+
+.albuns-hero .decoracao {
+  color: var(--cor-destaque);
+  letter-spacing: 12px;
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+}
+
+.albuns-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--cor-texto);
+}
+
+.albuns-hero h1 em {
+  color: var(--cor-destaque);
+  font-style: italic;
+}
+
+.albuns-hero p {
+  margin-top: 16px;
+  color: var(--cor-suave);
+  font-size: 1.5rem;
+  font-style: italic;
+}
+
+.albuns-lista {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.album-card {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 48px 0;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: entrar 0.6s ease forwards;
+}
+
+/* Alternância: ímpar = imagem à esquerda, par = imagem à direita */
+.album-card:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+@keyframes entrar {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.album-capa {
   flex-shrink: 0;
-  transition: 0.4s;
+  width: 220px;
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
 }
 
-.card:hover {
-  transform: scale(1.06);
-}
-
-.card img {
+.album-capa img {
   width: 100%;
   height: 100%;
-
   object-fit: cover;
+  display: block;
 }
 
-.overlay {
+.album-capa::after {
+  content: '';
   position: absolute;
   inset: 0;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+}
 
-  background: linear-gradient(
-    to top,
-    rgba(0,0,0,0.9),
-    rgba(44, 24, 1, 0.664)
-  );
-
+/* --- Conteúdo textual --- */
+.album-info {
+  flex: 1;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 40px;
+  gap: 12px;
+}
+
+.album-card:nth-child(even) .album-info {
   align-items: flex-end;
-
-  padding: 20px;
+  text-align: right;
 }
 
-.overlay h2 {
-  color: white;
-  font-size: 24px;
+.album-numero {
+  font-size: 0.7rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--cor-era);
+  font-family: 'Outfit', sans-serif;
 }
 
+.album-nome {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--cor-texto);
+}
+
+.album-meta {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.album-card:nth-child(even) .album-meta {
+  justify-content: flex-end;
+}
+
+.album-ano {
+  font-size: 0.85rem;
+  color: var(--cor-suave);
+}
+
+.album-genero {
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 100px;
+  border: 1px solid var(--cor-era);
+  color: var(--cor-era);
+}
+
+.album-divisor {
+  width: 40px;
+  height: 1px;
+  background: var(--cor-era);
+  opacity: 0.5;
+}
+
+.album-card:nth-child(even) .album-divisor {
+  align-self: flex-end;
+}
+
+.album-curiosidade {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: rgba(245, 230, 204, 0.7);
+  max-width: 420px;
+  font-family: 'Outfit', sans-serif;
+}
+
+.albuns-footer {
+  text-align: center;
+  padding: 40px 24px;
+  border-top: 1px solid rgba(212, 175, 55, 0.1);
+  color: var(--cor-suave);
+  font-size: 0.85rem;
 
 
-@keyframes slide {
-  from {
-    transform: translateX(0);
+  .album-card:nth-child(even) .album-info {
+    align-items: center;
+    text-align: center;
   }
 
-  to {
-    transform: translateX(-50%);
+  .album-card:nth-child(even) .album-meta {
+    justify-content: center;
+  }
+
+  .album-card:nth-child(even) .album-divisor {
+    align-self: center;
+  }
+
+  .album-capa {
+    width: 180px;
+    height: 180px;
+  }
+
+  .album-info {
+    padding: 0;
   }
 }

@@ -141,13 +141,6 @@ nav img {
   box-shadow: 0 .5 rem 1rem  rgba(0, 0, 0,.1 );
   height: 80%;
   object-fit: cover;
-
-  /* flex-basis: 31%;
-  background: #573202a1;
-  border-radius: 10px;
-  margin-bottom: 5%;
-  padding: 20px 12px;
-  box-sizing: border-box;*/
 }
 .projeto .row .content{
   flex: 1 1 40rem;

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mirrorball insights. | Dashboard</title>
+    <link rel="stylesheet" href="./css/dashboards.css">
+    <script src="../js/sessao.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="janela">
+        <div class="header-left">
+            <div class="logo">
+            <img src="./assets/logomirrorball.png" alt="mirrorball insights">
+            </div>
+            <div class="hello">
+            <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+            </div>
+            <a href="./testes.html" class="btn-nav">Testes</a>
+            <a href="./dashboard.html" class="btn-nav-active">Dashboard</a>
+            <a href="./index.html" class="btn-nav">Home</a>
+            <div class="btn-logout" onclick="limparSessao()">Sair</div>
+        </div>
+        <div class="dash">
+            <div class="dash-titulo">
+                <p class="decoracao"> Seus resultados:</p>
+                <h1><em>Dashboard</em></h1>
+                <p>Veja como foi seu desempenho geral nos testes!</p>
+            </div>
+            <div class="cards-resumo" id="cardsResumo">
+            </div>
+            <div class="graficos-grid" id="graficosGrid">
+            </div>
+        </div>
+    </div>
+    <script>
+        // ============================================================
+        //  LEITURA DOS DADOS DO SESSIONSTORAGE
+        //
+        //  O quiz deve salvar os dados assim ao finalizar:
+        //
+        //  — Quiz Shakespeare (quiz-shakespeare):
+        //    sessionStorage.setItem('RESULTADO_SHAKESPEARE', JSON.stringify({
+        //        acertos: 7,
+        //        erros: 3,
+        //        total: 10,
+        //        acertosPorQuestao: [1,0,1,1,0,1,1,0,1,1]  // 1=acertou, 0=errou
+        //    }))
+        //
+        //  — Quiz Álbuns (quiz-albuns):
+        //    sessionStorage.setItem('RESULTADO_ALBUNS', JSON.stringify({
+        //        albumResultado: 'Folklore',   // álbum que o usuário tirou
+        //        respostas: ['Folklore','Red','1989','Folklore','Evermore']
+        //    }))
+        //
+        //  Se quiser testar sem fazer os quizzes, descomente o bloco
+        //  "DADOS DE TESTE" abaixo.
+        // ============================================================
+
+        // --- DADOS DE TESTE (descomente para testar) ---
+        
+        sessionStorage.setItem('RESULTADO_SHAKESPEARE', JSON.stringify({
+            acertos: 7, erros: 3, total: 10,
+            acertosPorQuestao: [1,0,1,1,0,1,1,0,1,1]
+        }))
+        sessionStorage.setItem('RESULTADO_ALBUNS', JSON.stringify({
+            albumResultado: 'Folklore',
+            respostas: ['Folklore','Red','1989','Folklore','Evermore',
+                        'Folklore','Midnights','Red','Lover','Folklore']
+        }))
+        
+        const COR_ALBUM = {
+            'Taylor Swift': '#4a90a4',
+            'Fearless':     '#c9a84c',
+            'Speak Now':    '#7b4fa6',
+            'Red':          '#b5302a',
+            '1989':         '#87ceeb',
+            'Reputation':   '#555555',
+            'Lover':        '#e8a0b4',
+            'Folklore':     '#8c8c8c',
+            'Evermore':     '#8b5e3c',
+            'Midnights':    '#3b4a6b',
+            'TTPD':         '#c8c0b0',
+        }
+        Chart.defaults.color = '#c9a876'
+        Chart.defaults.font.family = "'Outfit', sans-serif"
+        Chart.defaults.borderColor = 'rgba(180, 126, 59, 0.15)'
+
+        window.addEventListener('load', () => {
+            const dadosShake = lerStorage('RESULTADO_SHAKESPEARE')
+            const dadosAlbum = lerStorage('RESULTADO_ALBUNS')
+
+            if (!dadosShake && !dadosAlbum) {
+                mostrarSemDados()
+                return
+            }
+            montarCardsResumo(dadosShake, dadosAlbum)
+            montarGraficos(dadosShake, dadosAlbum)
+        })
+        function lerStorage(chave) {
+            try {
+                const raw = sessionStorage.getItem(chave)
+                return raw ? JSON.parse(raw) : null
+            } catch (e) {
+                return null
+            }
+        }
+        function mostrarSemDados() {
+            document.getElementById('cardsResumo').innerHTML = ''
+            document.getElementById('graficosGrid').innerHTML = `
+                <div class="grafico-box largo">
+                    <div class="sem-dados">
+                        <span class="icone">✦</span>
+                        <p>Você ainda não fez nenhum quiz. Faça um teste para ver seus resultados aqui!</p>
+                        <a href="testes.html">Ir para os Testes</a>
+                    </div>
+                </div>`
+        }
+        function montarCardsResumo(shake, album) {
+            const container = document.getElementById('cardsResumo')
+            let html = ''
+
+            if (shake) {
+                const pct = Math.round((shake.acertos / shake.total) * 100)
+                html += cardResumo('Quiz: Quem disse isso...?', shake.acertos + '/' + shake.total, pct + '% de acertos')
+            }
+
+            if (album) {
+                html += cardResumo('Seu Álbum é o:', album.albumResultado, `de acordo com seu quiz de personalidade`)
+            }
+
+            if (shake) {
+                html += cardResumo('Quantidade de erros:', shake.erros, 'no quiz Taylor vs Shakespeare')
+            }
+            container.innerHTML = html
+        }
+        function cardResumo(label, valor, desc) {
+            return `
+                <div class="card-resumo">
+                <span class="card-label">${label}</span>
+                <span class="card-valor">${valor}</span>
+                <span class="card-desc">${desc}</span>
+                </div>`
+        }
+        function montarGraficos(shake, album) {
+            const grid = document.getElementById('graficosGrid')
+            let html = ''
+
+            if (shake && shake.acertosPorQuestao) {
+                html += `
+                    <div class="grafico-box">
+                        <p class="grafico-titulo">Acertos por Questão</p>
+                        <p class="grafico-subtitulo">Quiz: Taylor Swift ou Shakespeare?</p>
+                        <canvas id="graficoAcertos" height="220"></canvas>
+                    </div>`
+
+                html += `
+                    <div class="grafico-box">
+                        <p class="grafico-titulo">Acertos vs Erros</p>
+                        <p class="grafico-subtitulo">Resultado geral do quiz</p>
+                        <canvas id="graficoPizza" height="220"></canvas>
+                    </div>`
+            }
+
+            if (album && album.respostas) {
+                html += `
+                    <div class="grafico-box largo">
+                        <p class="grafico-titulo">Distribuição de Respostas por Álbum</p>
+                        <p class="grafico-subtitulo">Quantas vezes cada álbum apareceu nas suas respostas</p>
+                        <canvas id="graficoAlbuns" height="120"></canvas>
+                    </div>`
+            }
+
+            grid.innerHTML = html
+
+            // Renderiza depois do innerHTML ser inserido no DOM
+            requestAnimationFrame(() => {
+                if (shake && shake.acertosPorQuestao) {
+                    renderizarAcertosPorQuestao(shake)
+                    renderizarPizza(shake)
+                }
+                if (album && album.respostas) {
+                    renderizarAlbuns(album)
+                }
+            })
+        }
+
+        // --- Gráfico de barras: acertos por questão ---
+        function renderizarAcertosPorQuestao(shake) {
+            const labels = shake.acertosPorQuestao.map((_, i) => 'Q' + (i + 1))
+            const valores = shake.acertosPorQuestao 
+            const cores = valores.map(v => v === 1 ? '#9dd3ba' : '#f0c1c6')
+            const coresBorda = valores.map(v => v === 1 ? '#198754' : '#dc3545')
+            new Chart(document.getElementById('graficoAcertos'), {
+                type: 'bar',
+                data: {
+                    labels,
+                    datasets: [{
+                        label: 'Acerto (1) / Erro (0)',
+                        data: valores,
+                        backgroundColor: cores,
+                        borderColor: coresBorda,
+                        borderWidth: 1,
+                        borderRadius: 4,
+                    }]
+                },
+                options: {
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: {
+                            min: 0, max: 1,
+                            ticks: { stepSize: 1, callback: v => v === 1 ? '✓' : '✗' },
+                            grid: { color: 'rgba(180,126,59,0.1)' }
+                        },
+                        x: { grid: { display: false } }
+                    }
+                }
+            })
+        }
+        function renderizarPizza(shake) {
+            new Chart(document.getElementById('graficoPizza'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Acertos', 'Erros'],
+                    datasets: [{
+                        data: [shake.acertos, shake.erros],
+                        backgroundColor: ['#9dd3ba', '#f0c1c6'],
+                        borderColor: ['#198754', '#dc3545'],
+                        borderWidth: 2,
+                        hoverOffset: 8
+                    }]
+                },
+                options: {
+                    cutout: '65%',
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: { padding: 16, usePointStyle: true }
+                        }
+                    }
+                }
+            })
+        }-
+        function renderizarAlbuns(album) {
+            const contagem = {}
+            album.respostas.forEach(a => {
+                contagem[a] = (contagem[a] || 0) + 1
+            })
+            const labels = Object.keys(contagem)
+            const valores = Object.values(contagem)
+            const cores = labels.map(l => COR_ALBUM[l] || '#d4af37')
+            new Chart(document.getElementById('graficoAlbuns'), {
+                type: 'bar',
+                data: {
+                    labels,
+                    datasets: [{
+                        label: 'Respostas',
+                        data: valores,
+                        backgroundColor: cores.map(c => c + 'cc'),
+                        borderColor: cores,
+                        borderWidth: 2,
+                        borderRadius: 4,
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: {
+                            ticks: { stepSize: 1 },
+                            grid: { color: 'rgba(180,126,59,0.1)' }
+                        },
+                        y: { grid: { display: false } }
+                    }
+                }
+            })
+        }
+    </script>
+
+</body>
+</html>

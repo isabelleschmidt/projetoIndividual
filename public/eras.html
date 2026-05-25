@@ -1,152 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eras| mirrorball insights.</title>
-    <script src="./js/sessao.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/eras.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eras| mirrorball insights.</title>
+  <script src="./js/sessao.js"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/eras.css">
 </head>
+
 <body>
-<section>
+  <section>
     <header class="header">
-    <nav>
-      <a href="index.html"><img src="./assets/logomirrorball.png"></a>
-      <div class="nav-links">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="sobre.html">Sobre</a></li>
-          <li><a href="eras.html">Eras</a></li>
-          <li><a href="testes.html">Testes</a></li>
-          <li><a href="login.html">Entrar</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-  <section class="carousel">
-
-    <div class="track">
-
-      <!-- CARDS -->
-
-      <div class="card">
-        <img src="../public/assets/imgs/debut.png" alt="1">
-        <div class="overlay">
-          <h2>Taylor Swift</h2>
+      <nav>
+        <a href="index.html"><img src="./assets/logomirrorball.png"></a>
+        <div class="nav-links">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="trajetoria.html">Trajetória</a></li>
+            <li><a href="eras.html">Eras</a></li>
+            <li><a href="testes.html">Testes</a></li>
+            <li><a href="login.html">Entrar</a></li>
+          </ul>
         </div>
-      </div>
+      </nav>
 
-      <div class="card">
-        <img src="../public/assets/imgs/fearless.png" alt="2">
-        <div class="overlay">
-          <h2>Fearless</h2>
+      <div class="albuns-hero">
+        <h1>As Eras de<br><em>Taylor Swift</em></h1>
+        <p>A cada álbum, uma identidade diferente.</p>
+      </div>
+      <div class="albuns-lista">
+
+        <!-- debut -->
+        <div class="album-card" style="--cor-era: #4a90a4;">
+          <div class="album-capa">
+            <!-- Substitua o src pela imagem real da capa -->
+            <img src="./assets/imgs/debut.png" alt="Taylor Swift (2006)">
+          </div>
+          <div class="album-info">
+            <span class="album-numero">Álbum 01</span>
+            <h2 class="album-nome">Taylor Swift</h2>
+            <div class="album-meta">
+              <span class="album-ano">2006</span>
+              <span class="album-genero">Country</span>
+            </div>
+            <div class="album-divisor"></div>
+            <p class="album-curiosidade">O álbum de estreia foi gravado quando Taylor tinha apenas 14 anos. Ela foi a
+              primeira artista feminina a escrever sozinha um álbum de estreia número 1 nas paradas country dos EUA.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="card">
-        <img src="../public/assets/imgs/speaknow.png" alt="3">
-        <div class="overlay">
-          <h2>Speak Now</h2>
+        <!-- fearless -->
+        <div class="album-card" style="--cor-era: #c9a84c;">
+          <div class="album-capa">
+            <img src="./assets/imgs//fearless.png" alt="Fearless (2008)">
+          </div>
+          <div class="album-info">
+            <span class="album-numero">Álbum 02</span>
+            <h2 class="album-nome">Fearless</h2>
+            <div class="album-meta">
+              <span class="album-ano">2008</span>
+              <span class="album-genero">Country Pop</span>
+            </div>
+            <div class="album-divisor"></div>
+            <p class="album-curiosidade">Vencedor do Grammy de Álbum do Ano em 2010, tornando Taylor a artista mais
+              jovem a conquistar o prêmio até então. Ficou 11 semanas no topo da Billboard 200.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="card">
-        <img src="../public/assets/imgs/tayred.png" alt="">
-        <div class="overlay">
-          <h2>RED</h2>
+        <!-- speak now -->
+        <div class="album-card" style="--cor-era: #7b4fa6;">
+          <div class="album-capa">
+            <img src="./assets/imgs/speaknow.png" alt="Speak Now (2010)">
+          </div>
+          <div class="album-info">
+            <span class="album-numero">Álbum 03</span>
+            <h2 class="album-nome">Speak Now</h2>
+            <div class="album-meta">
+              <span class="album-ano">2010</span>
+              <span class="album-genero">Country Pop</span>
+            </div>
+            <div class="album-divisor"></div>
+            <p class="album-curiosidade">Escrito inteiramente por Taylor, sem nenhum co-escritor, 
+              todas as 14 faixas foram compostas por ela sozinha ao longo de dois anos de turnê.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="card">
-        <img src="../public/assets/imgs/tay1989.png" alt="">
-        <div class="overlay">
-          <h2>1989</h2>
+        <!-- red -->
+        <div class="album-card" style="--cor-era: #b5302a;">
+          <div class="album-capa">
+            <img src="./assets/imgs/tayred.png" alt="Red (2012)">
+          </div>
+          <div class="album-info">
+            <span class="album-numero">Álbum 04</span>
+            <h2 class="album-nome">Red</h2>
+            <div class="album-meta">
+              <span class="album-ano">2012</span>
+              <span class="album-genero">Country Pop / Rock</span>
+            </div>
+            <div class="album-divisor"></div>
+            <p class="album-curiosidade">Considerado por muitos o álbum mais emocional de Taylor, vendeu 1,2 milhão de
+              cópias na primeira semana nos EUA. A faixa "All Too Well (10 Minute Version)" se tornou a maior canção já
+              lançada a atingir o #1 nas paradas.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="card">
-        <img src="../public/assets/imgs/reputation.png" alt="">
-        <div class="overlay">
-          <h2>Reputation</h2>
+        <!-- 1989 -->
+        <div class="album-card" style="--cor-era: #87ceeb;">
+          <div class="album-capa">
+            <img src="./assets/imgs/tay1989.png" alt="1989 (2014)">
+          </div>
+          <div class="album-info">
+            <span class="album-numero">Álbum 05</span>
+            <h2 class="album-nome">1989</h2>
+            <div class="album-meta">
+              <span class="album-ano">2014</span>
+              <span class="album-genero">Synth-Pop</span>
+            </div>
+            <div class="album-divisor"></div>
+            <p class="album-curiosidade">A transição oficial para o pop rendeu o segundo Grammy de Álbum do Ano. "Shake
+              It Off" ficou 50 semanas no top 10 da Billboard Hot 100, um recorde na época.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="card">
-        <img src="../public/assets/imgs/lover.png" alt="">
-        <div class="overlay">
-          <h2>Lover</h2>
+        <!-- reputation -->
+        <div class="album-card" style="--cor-era: #a5a5a5; border: 1px solid #333;">
+          <div class="album-capa">
+            <img src="./assets/imgs/reputation.png" alt="Reputation (2017)">
+          </div>
+          <div class="album-info">
+            <span class="album-numero">Álbum 06</span>
+            <h2 class="album-nome">Reputation</h2>
+            <div class="album-meta">
+              <span class="album-ano">2017</span>
+              <span class="album-genero">Pop / Electropop</span>
+            </div>
+            <div class="album-divisor"></div>
+            <p class="album-curiosidade">Lançado após um ano de silêncio total nas redes sociais, foi o álbum mais
+              vendido de 2017 nos EUA com 1,216 milhão de cópias na primeira semana. A turnê associada arrecadou mais de
+              345 milhões de dólares.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="card">
-        <img src="../public/assets/imgs/folklore.png" alt="">
-        <div class="overlay">
-          <h2>folklore</h2>
+        <!-- lover -->
+        <div class="album-card" style="--cor-era: #e8a0b4;">
+          <div class="album-capa">
+            <img src="./assets/imgs/lover.png" alt="Lover (2019)">
+          </div>
+          <div class="album-info">
+            <span class="album-numero">Álbum 07</span>
+            <h2 class="album-nome">Lover</h2>
+            <div class="album-meta">
+              <span class="album-ano">2019</span>
+              <span class="album-genero">Synth-Pop / Electropop</span>
+            </div>
+            <div class="album-divisor"></div>
+            <p class="album-curiosidade">Com 18 faixas, é o álbum mais longo de Taylor. "ME!" e "You Need To Calm Down"
+              foram os primeiros singles com videoclipes lançados simultaneamente à música, quebrando recordes de
+              visualizações em 24 horas.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="card">
-        <img src="../public/assets/imgs/evermore.png" alt="">
-        <div class="overlay">
-          <h2>evermore</h2>
+        <!-- folklore -->
+        <div class="album-card" style="--cor-era: #8c8c8c;">
+          <div class="album-capa">
+            <img src="./assets/imgs/folklore.png" alt="Folklore (2020)">
+          </div>
+          <div class="album-info">
+            <span class="album-numero">Álbum 08</span>
+            <h2 class="album-nome">Folklore</h2>
+            <div class="album-meta">
+              <span class="album-ano">2020</span>
+              <span class="album-genero">Indie Folk / Alternative</span>
+            </div>
+            <div class="album-divisor"></div>
+            <p class="album-curiosidade">Surpresa anunciada apenas 16 horas antes do lançamento. Rendeu o terceiro
+              Grammy de Álbum do Ano, tornando Taylor a primeira artista solo a vencer o prêmio três vezes. Criado
+              inteiramente durante a pandemia.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="card">
-        <img src="../public/assets/imgs/midnights.png" alt="">
-        <div class="overlay">
-          <h2>Midnights</h2>
+        <!-- evermore -->
+        <div class="album-card" style="--cor-era: #8b5e3c;">
+          <div class="album-capa">
+            <img src="./assets/imgs/evermore.png" alt="Evermore (2020)">
+          </div>
+          <div class="album-info">
+            <span class="album-numero">Álbum 09</span>
+            <h2 class="album-nome">Evermore</h2>
+            <div class="album-meta">
+              <span class="album-ano">2020</span>
+              <span class="album-genero">Indie Folk / Alternative</span>
+            </div>
+            <div class="album-divisor"></div>
+            <p class="album-curiosidade">Lançado surpresa apenas 5 meses após Folklore, é considerado o "álbum irmão".
+              Taylor descreveu a criação como uma viagem que não queria terminar, e pela primeira vez explorou
+              narrativas de personagens fictícios em profundidade.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="card">
-        <img src="../public/assets/imgs/ttpd.png" alt="">
-        <div class="overlay">
-          <h2>The Tortured Poets Department</h2>
+        <!-- midnights -->
+        <div class="album-card" style="--cor-era: #3b4a6b;">
+          <div class="album-capa">
+            <img src="./assets/imgs/midnights.png" alt="Midnights (2022)">
+          </div>
+          <div class="album-info">
+            <span class="album-numero">Álbum 10</span>
+            <h2 class="album-nome">Midnights</h2>
+            <div class="album-meta">
+              <span class="album-ano">2022</span>
+              <span class="album-genero">Synth-Pop / Dream Pop</span>
+            </div>
+            <div class="album-divisor"></div>
+            <p class="album-curiosidade">Quebrou o recorde de streams em um único dia no Spotify com 184,6 milhões de
+              reproduções. Venceu o quarto Grammy de Álbum do Ano, tornando Taylor a única artista da história a
+              conquistar o prêmio quatro vezes.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="card">
-        <img src="../public/assets/imgs/tloas.png" alt="">
-        <div class="overlay">
-          <h2>The Life of a Showgirl</h2>
+        <!-- ttpd -->
+        <div class="album-card" style="--cor-era: #c8c0b0;">
+          <div class="album-capa">
+            <img src="./assets/imgs/ttpd.png" alt="The Tortured Poets Department (2024)">
+          </div>
+          <div class="album-info">
+            <span class="album-numero">Álbum 11</span>
+            <h2 class="album-nome">The Tortured Poets Department</h2>
+            <div class="album-meta">
+              <span class="album-ano">2024</span>
+              <span class="album-genero">Art Pop / Indie Pop</span>
+            </div>
+            <div class="album-divisor"></div>
+            <p class="album-curiosidade">Anunciado durante o Grammy em 2024, foi lançado com uma edição dupla surpresa
+              "The Anthology" com 31 faixas. Quebrou o recorde de streams em um único dia no Spotify logo nas primeiras
+              horas, superando o próprio Midnights.</p>
+          </div>
         </div>
+
+        <!-- tloas -->
+        <div class="album-card" style="--cor-era: #ff7b00;">
+          <div class="album-capa">
+            <img src="./assets/imgs/tloas.png" alt="The Life of a Showgirl (2026)">
+          </div>
+          <div class="album-info">
+            <span class="album-numero">Álbum 12</span>
+            <h2 class="album-nome">The Life of a Showgirl</h2>
+            <div class="album-meta">
+              <span class="album-ano">2025</span>
+              <span class="album-genero">Soft Pop</span>
+            </div>
+            <div class="album-divisor"></div>
+            <p class="album-curiosidade">Escrito em 2024 nos bastidores da The Eras Tour,
+               as faixas retratam a sua vida privada fora dos palcos durante a turnê. O álbum deixa de lado o tom melancólico de seu antecessor, The Tortured Poets Department,
+                para apostar em um pop teatral e  descontraído.</p>
+          </div>
+
       </div>
-
-      <!------- loop  --------->
-
-      <div class="card">
-        <img src="" alt="">
-        <div class="overlay">
-          <h2>Card 1</h2>
-        </div>
+      <div class="albuns-footer">
+        Feito com amor por uma swiftie ♥ SPTech © 2026
       </div>
-
-      <div class="card">
-        <img src="" alt="">
-        <div class="overlay">
-          <h2>Card 2</h2>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="" alt="">
-        <div class="overlay">
-          <h2>Card 3</h2>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="" alt="">
-        <div class="overlay">
-          <h2>Card 4</h2>
-        </div>
-      </div>
-
-    </div>
-
-  </section>
 
 </body>
+
 </html>

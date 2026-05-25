@@ -1,0 +1,295 @@
+:root {
+
+    --cor-fundo:        #2e1a06;   
+    --cor-fundo-caixa:  #4a2c0a; 
+    --cor-fundo-nav: transparent;
+    --cor-texto:        #f5e6cc;  
+    --cor-texto-suave:  #c9a876;  
+
+
+    --cor-destaque:     #d4af37;  
+    --cor-destaque-2:   #b47e3b;   
+
+    --success:#198754;
+    --success-dark: #095c36;
+    --success-light:#9dd3ba;
+    --warning:#ffc107;
+    --warning-dark:#705400;
+    --warning-light:#fdebb3;
+    --danger:#dc3545;
+    --danger-dark:#990c19;
+    --danger-light:#f0c1c6;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', serif;
+}
+
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.712), rgba(0, 0, 0, 0.712)), url(../assets/imgs/lousa.png);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;  /* ← adicione esta linha */
+    position: relative;
+    color: var(--cor-texto);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+nav {
+    display: flex;
+    padding: 24px 6%;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+nav img {
+    width: 250px;
+}
+.nav-links {
+    flex: 1;
+    text-align: right;
+}
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a {
+    color: #b47e3b;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: 'Playfair Display', sans-serif;
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+.nav-links ul li a:hover {
+    border: 1px solid #b47e3b;
+    background-color: rgba(180, 126, 59, 0.18);
+    transform: translateY(-2px);
+}
+ 
+.conteudo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 16px;
+}
+
+#telaInicial,
+#telaFinal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex: 1;
+    padding: 40px 24px;
+}
+
+.capa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+    max-width: 540px;
+}
+
+.capa-decoracao {
+    color: var(--cor-destaque);
+    font-size: 1.4rem;
+    letter-spacing: 12px;
+}
+
+.titulo-principal {
+    font-size: 3rem;
+    line-height: 1.2;
+    color: var(--cor-texto);
+}
+
+.ou {
+    font-style: italic;
+    font-size: 1.8rem;
+    color: var(--cor-destaque);
+}
+
+.subtitulo {
+    color: var(--cor-texto-suave);
+    font-size: 1rem;
+    font-style: italic;
+}
+
+.pontuacao-final-texto {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--cor-destaque);
+}
+
+.mensagem-final {
+    font-size: 1.1rem;
+    padding: 12px 20px;
+    border-radius: 8px;
+}
+button {
+    background: transparent;
+    border: 2px solid var(--cor-destaque);
+    color: var(--cor-destaque);
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 12px 28px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    border-radius: 4px;
+}
+
+button:hover:not(:disabled) {
+    background: var(--cor-destaque);
+    color: var(--cor-fundo);
+}
+
+button:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+#telaJogo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+    width: 100%;
+    flex: 1;
+    gap: 24px;
+}
+
+#placar {
+    display: flex;
+    gap: 32px; 
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    color: var(--cor-texto-suave);
+    border: 1px solid var(--cor-destaque-2);
+    padding: 8px 24px;
+    border-radius: 100px;
+    background: var(--cor-fundo-caixa);
+}
+
+#placar strong {
+    color: var(--cor-texto);
+}
+
+#caixaQuestao {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 440px;
+    width: 100%;
+    background: var(--cor-fundo-caixa);
+    border: 1px solid var(--cor-destaque-2);
+    border-radius: 12px;
+    padding: 20px;
+}
+
+#infoQuestao {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.8rem;
+    color: var(--cor-texto-suave);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+#citacao {
+    position: relative;
+    padding: 8px 16px;
+    border-left: 3px solid var(--cor-destaque);
+}
+.aspas-decorativas {
+    font-size: 4rem;
+    line-height: 0;
+    vertical-align: -0.6em;
+    color: var(--cor-destaque);
+    font-family: Georgia, serif;
+    opacity: 0.4;
+}
+
+.aspas-decorativas.direita {
+    float: right;
+}
+
+#spanQuestaoExibida {
+    font-size: 1.15rem;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--cor-texto);
+}
+
+#instrucao {
+    color: var(--cor-texto-suave);
+    font-size: 0.9rem;
+}
+#opcoes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#opcoes input[type="radio"] {
+    display: none;
+}
+
+.opcao-wrapper label {
+    display: block;
+    padding: 12px 16px;
+    border: 1px solid var(--cor-destaque-2);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+    font-size: 0.95rem;
+    color: var(--cor-texto);
+}
+
+.opcao-wrapper label:hover {
+    background: rgba(180, 126, 59, 0.2);
+    border-color: var(--cor-destaque);
+}
+.opcao-wrapper input[type="radio"]:checked + label {
+    background: rgba(212, 175, 55, 0.15);
+    border-color: var(--cor-destaque);
+    color: var(--cor-destaque);
+    font-weight: bold;
+}
+#botoes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.text-success-with-bg {
+    background-color: var(--success-light) !important;
+    color: var(--success-dark) !important;
+    border-color: var(--success) !important;
+    font-weight: bold;
+}
+
+.text-warning-with-bg {
+    background-color: var(--warning-light) !important;
+    color: var(--warning-dark) !important;
+    border-color: var(--warning) !important;
+}
+
+.text-danger-with-bg {
+    background-color: var(--danger-light) !important;
+    color: var(--danger-dark) !important;
+    border-color: var(--danger) !important;
+    font-weight: bold;
+}

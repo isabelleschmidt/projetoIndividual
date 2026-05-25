@@ -1,85 +1,84 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mirrorball insights. | Taylor Swift ou Shakespeare?</title>
+    <title>mirrorball insights. | Testes</title>
     <link rel="stylesheet" href="./css/testes.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
 </head>
-
-<body onload="onloadEsconder()">
+<body>
     <nav>
-        <a href="index.html"><img src="./assets/logomirrorball.png" alt="mirrorball insights"></a>
+        <a href="index.html">
+            <img src="./assets/logomirrorball.png" alt="mirrorball insights">
+        </a>
+
         <div class="nav-links">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="trajetoria.html">Trajetória</a></li>
                 <li><a href="eras.html">Eras</a></li>
                 <li><a href="testes.html">Testes</a></li>
-                <li><a href="cadastro.html">Entrar</a></li>
+                <li><a href="login.html">Entrar</a></li>
             </ul>
         </div>
     </nav>
-    <div id="telaInicial">
-        <div class="capa">
-            <div class="capa-decoracao">✦ ✦ ✦</div>
+    <section class="conteudo-testes">
+        <div class="titulo-area">
+            <div class="capa-decoracao"></div>
             <h1 class="titulo-principal">
-                Quem disse isso?<br>
-                Taylor Swift <span class="ou">ou</span> Shakespeare?
+                Escolha seu teste
             </h1>
-            <p class="subtitulo">Separe as rimas da rainha pop das do bardo inglês — se conseguir.</p>
-            <button id="btnIniciarQuiz" onclick="iniciarQuiz()">Começar o Quiz</button>
+            <p class="subtitulo">
+                Descubra mais sobre o swiftverso.
+            </p>
         </div>
-    </div>
-    <div id="telaJogo" style="display:none">
+        <div class="cards-testes">
+            <!-- CARD 1 -->
+            <div class="card-teste">
+                <div class="card-brilho"></div>
+                <h2>
+                    Taylor Swift ou Shakespeare?
+                </h2>
+                <p>
+                    Tente distinguir as letras da cantora dos versos do dramaturgo.
+                    Mais difícil do que parece.
+                </p>
+                <a href="quemdisse.html">
+                    <button>
+                        Jogar
+                    </button>
+                </a>
 
-
-        <div id="placar">
-            <span>Acertos: <strong id="spanCertas">0</strong></span>
-            <span>Erros: <strong id="spanErradas">0</strong></span>
-        </div>
-
-        <div id="caixaQuestao">
-
-            <div id="infoQuestao">
-                Questão <span id="spanNumeroDaQuestaoAtual">1</span> de <span id="qtdQuestoes">10</span>
             </div>
 
-            <div id="citacao">
-                <span class="aspas-decorativas">"</span>
-                <p id="spanQuestaoExibida"></p>
-                <span class="aspas-decorativas direita">"</span>
+            <!-- CARD 2 -->
+
+            <div class="card-teste">
+                <div class="card-brilho"></div>
+                <h2>
+                    Qual álbum da Taylor você seria?
+                </h2>
+
+                <p>
+                    Responda perguntas sobre sua personalidade e descubra
+                    qual era combina com você.
+                </p>
+                <a href="quizalbuns.html">
+                    <button>
+                        Descobrir
+                    </button>
+                </a>
             </div>
-            <p id="instrucao"><em>Quem disse isso?</em></p>
-
-            <div id="opcoes">
-                <span class="opcao-wrapper">
-                <label for="primeiraOpcao" id="labelOpcaoUm"></label>   <!-- ← sem texto fixo -->
-                <label for="segundaOpcao" id="labelOpcaoDois"></label>
-                </span>
-            </div>
-
-            <div id="botoes">
-    <button onclick="submeter()" id="btnSubmeter">Confirmar resposta</button>  <!-- ← adicione esta linha -->
-    <button onclick="avancar()" id="btnProx" disabled>Próxima questão →</button>
-    <button onclick="tentarNovamente()" id="btnTentarNovamente" disabled>Jogar novamente</button>
-</div>
-
         </div>
-    </div>
-    <div id="telaFinal" style="display:none">
-        <div class="capa resultado">
-            <div class="capa-decoracao">✦ ✦ ✦</div>
-            <h2>Pontuação Final!</h2>
-            <p id="spanPontuacaoFinal" class="pontuacao-final-texto"></p>
-            <p id="msgFinal" class="mensagem-final"></p>
-            <button onclick="tentarNovamente()">Jogar novamente</button>
-        </div>
-    </div>
-<script src="./js/questoes.js"></script>
-<script src="./js/jogo.js"></script>
+         <div class="footer">
+        Feito com amor por uma swiftie ♥ SPTech © 2026
+      </div>
+    </section>
 </body>
 </html>

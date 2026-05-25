@@ -57,7 +57,7 @@ function limparCoresAlternativas() {
 function resetarBotoes() {
     document.getElementById('btnSubmeter').disabled = false
     document.getElementById('btnProx').disabled = true
-    document.getElementById('btnTentarNovamente').disabled = true
+    document.getElementById('btnTentarNovamente').style.display = 'none'
 }
 
 function submeter() {
@@ -110,7 +110,6 @@ function checarResposta() {
         }
     })
 
-    // Incrementa APÓS checar (o checar usa o índice atual)
     numeroDaQuestaoAtual++
 }
 
@@ -128,6 +127,7 @@ function avancar() {
 
 // --- Exibe a tela final com o resultado ---
 function finalizarJogo() {
+    document.getElementById('btnTentarNovamente').style.display = 'block'
     document.getElementById('telaJogo').style.display  = 'none'
     document.getElementById('telaFinal').style.display = 'flex'
 
@@ -143,10 +143,10 @@ function finalizarJogo() {
         mensagem  = 'Muito confuso ou muito bom de chute...mas passa de ano!! Parabéns'
         classeMsg = 'text-warning-with-bg'
     } else if (porcentagem < 1) {
-        mensagem  = 'QUASE SWIFTIE! Tay e Shakespeare te aplaudem!'
+        mensagem  = 'Parabéns!! Você tem bons conhecimentos de música e literatura.'
         classeMsg = 'text-success-with-bg'
     } else {
-        mensagem  = 'SWIFTIE NÍVEL HARD! Literatura e música são pra você! '
+        mensagem  = 'SWIFTIE NÍVEL HARD! Tay e William se orgulham de você! '
         classeMsg = 'text-success-with-bg'
     }
 

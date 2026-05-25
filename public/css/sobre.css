@@ -57,8 +57,7 @@ nav img {
 .main {
   width: 100%;
   height: auto;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.712), rgba(0, 0, 0, 0.712)), 
-                    url(../assets/imgs/taylorfundoquadro.png);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.712), rgba(0, 0, 0, 0.712)), url(../assets/imgs/taylorfundoquadro.png);
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -76,7 +75,7 @@ nav img {
 .heading::after{
     position: absolute;
     content: '';
-    width: 50%;
+    width: 100%;
     height: 5px;
     left: 50%;
     bottom: -5px;
@@ -156,13 +155,21 @@ nav img {
     color: rgb(255, 255, 255);
     margin: 7px 0;
     line-height: 25px;
+    font-family: 'Outfit', sans-serif;
 }
-/* Card ímpar (esquerda) → data no canto superior direito */
+
 .container ul li:nth-child(odd) .date {
     right: 15px;
 }
 
-/* Card par (direita) → data no canto superior esquerdo */
+
 .container ul li:nth-child(even) .date {
     left: 15px;
+}
+.footer{
+  text-align: center;
+  padding: 40px 24px;
+  border-top: 1px solid rgba(212, 175, 55, 0.1);
+  color: var(--cor-suave);
+  font-size: 0.85rem;
 }
