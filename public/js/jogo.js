@@ -58,6 +58,7 @@ function resetarBotoes() {
     document.getElementById('btnSubmeter').disabled = false
     document.getElementById('btnProx').disabled = true
     document.getElementById('btnTentarNovamente').style.display = 'none'
+    document.getElementById('fzrOutroQuiz').style.display = 'none'
 }
 
 function submeter() {
@@ -128,6 +129,7 @@ function avancar() {
 // --- Exibe a tela final com o resultado ---
 function finalizarJogo() {
     document.getElementById('btnTentarNovamente').style.display = 'block'
+    document.getElementById('fzrOutroQuiz').style.display = 'block'
     document.getElementById('telaJogo').style.display  = 'none'
     document.getElementById('telaFinal').style.display = 'flex'
 
@@ -161,4 +163,8 @@ function finalizarJogo() {
 // --- tentar dnv  ---
 function tentarNovamente() {
     window.location.reload()
+}
+function fazerOutroQuiz(){
+    window.location.href = "./testes.html";
+
 }

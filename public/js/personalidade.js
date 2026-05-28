@@ -115,15 +115,15 @@ function finalizarQuiz() {
     let mensagem = ""
     if (albumFinal == "1989") {
         mensagem =
-            "Você é livre, divertida e ama aventuras inesquecíveis."
+            "Você é uma pessoa livre, divertida e ama aventuras inesquecíveis."
     }
     else if (albumFinal == "folklore") {
         mensagem =
-            "Você é introspectiva, criativa e transforma sentimentos em arte <br>(e tem muito bom gosto!!)"
+            "Você é uma pessoa introspectiva, criativa e transforma sentimentos em arte <br>(e tem muito bom gosto!!)"
     }
     else if (albumFinal == "reputation") {
         mensagem =
-            "Você parece misteriosa por fora, mas sente tudo intensamente."
+            "Você é uma pessoa que parece misteriosa por fora, mas sente tudo intensamente."
     }
     else if (albumFinal == "lover") {
         mensagem =
@@ -143,11 +143,11 @@ function finalizarQuiz() {
     }
     else if (albumFinal == "fearless") {
         mensagem =
-            "Você é sonhadora e acredita em finais felizes."
+            "Você é uma pessoa sonhadora e acredita em finais felizes."
     }
     else if (albumFinal == "ttpd") {
         mensagem =
-            "Você transforma emoções complexas em poesia."
+            "Você é uma pessoa que transforma emoções complexas em poesia."
 
     }
     else if (albumFinal == "speakNow") {
@@ -167,4 +167,7 @@ function finalizarQuiz() {
 }
 function tentarNovamente() {
     window.location.reload()
+}
+function fazerOutroQuiz(){
+    window.location.href = "./testes.html"
 }
