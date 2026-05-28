@@ -1,84 +1,60 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mirrorball insights. | Testes</title>
-    <link rel="stylesheet" href="./css/testes.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-        rel="stylesheet">
 </head>
+<link rel="stylesheet" href="./css/testes.css">
+
 <body>
-    <nav>
-        <a href="index.html">
-            <img src="./assets/logomirrorball.png" alt="mirrorball insights">
-        </a>
+    <div class="janela">
 
-        <div class="nav-links">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="trajetoria.html">Trajetória</a></li>
-                <li><a href="eras.html">Eras</a></li>
-                <li><a href="testes.html">Testes</a></li>
-                <li><a href="login.html">Entrar</a></li>
-            </ul>
-        </div>
-    </nav>
-    <section class="conteudo-testes">
-        <div class="titulo-area">
-            <div class="capa-decoracao"></div>
-            <h1 class="titulo-principal">
-                Escolha seu teste
-            </h1>
-            <p class="subtitulo">
-                Descubra mais sobre o swiftverso.
-            </p>
-        </div>
-        <div class="cards-testes">
-            <!-- CARD 1 -->
-            <div class="card-teste">
-                <div class="card-brilho"></div>
-                <h2>
-                    Taylor Swift ou Shakespeare?
-                </h2>
-                <p>
-                    Tente distinguir as letras da cantora dos versos do dramaturgo.
-                    Mais difícil do que parece.
-                </p>
-                <a href="quemdisse.html">
-                    <button>
-                        Jogar
-                    </button>
-                </a>
-
+        <aside class="header-left">
+            <div class="logo">
+                <img src="./assets/logomirrorball.png" alt="mirrorball insights">
+            </div>
+            <div class="hello">
+                <h3>Olá, <span>Swiftie</span> ✦</h3>
+            </div>
+            <div class="logo">
+                <img src="./assets/logomirrorball.png" alt="mirrorball insights">
+            </div>
+            <div class="hello">
+            <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+            </div>
+            <a href="./testes.html" class="btn-nav">Testes</a>
+            <a href="./dashboard.html" class="btn-nav-active">Dashboard</a>
+            <a href="./index.html" class="btn-nav">Home</a>
+            <div class="btn-logout" onclick="limparSessao()">Sair</div>
+            <a href="login.html" class="btn-logout">Sair</a>
+        </aside>
+        <main class="dash">
+            <div class="dash-titulo">
+                <div class="decoracao">quizzes</div>
+                <h1>Escolha seu <em>teste</em></h1>
+                <p>Descubra mais sobre o swiftverso.</p>
             </div>
 
-            <!-- CARD 2 -->
-
-            <div class="card-teste">
-                <div class="card-brilho"></div>
-                <h2>
-                    Qual álbum da Taylor você seria?
-                </h2>
-
-                <p>
-                    Responda perguntas sobre si e descubra
-                    qual era combina com você!!
-                </p>
-                <a href="quizalbuns.html">
-                    <button>
-                        Descobrir
-                    </button>
-                </a>
+            <div class="cards-testes">
+                <div class="card-teste">
+                    <div class="card-brilho"></div>
+                    <span class="card-tag">Adivinhação</span>
+                    <h2>Taylor Swift ou Shakespeare?</h2>
+                    <p>
+                        Tente distinguir as letras da cantora dos versos do dramaturgo.
+                        Mais difícil do que parece.
+                    </p>
+                    <a href="quemdisse.html" class="btn-jogar">Jogar</a>
+                    <span class="card-numero">01</span>
+                </div>
+                <div class="card-teste">
+                    <div class="card-brilho"></div>
+                    <span class="card-tag">Personalidade</span>
+                    <h2>Qual álbum da Taylor você seria?</h2>
+                    <p>
+                        Responda perguntas sobre si e descubra
+                        qual era combina com você!
+                    </p>
+                    <a href="quizalbuns.html" class="btn-jogar">Descobrir</a>
+                    <span class="card-numero">02</span>
+                </div>
             </div>
-        </div>
-         <div class="footer">
-        Feito com amor por uma swiftie ♥ SPTech © 2026
-      </div>
-    </section>
+        </main>
+    </div>
 </body>
 </html>

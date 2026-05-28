@@ -1,4 +1,4 @@
-* { 
+* {
   margin: 0;
   padding: 0;
   font-family: "Playfair Display", serif;
@@ -8,7 +8,8 @@
 html {
   scroll-behavior: smooth;
 }
-.header{
+
+.header {
   min-height: 100vh;
   width: 100%;
   background-image: linear-gradient(rgba(0, 0, 0, 0.712)), url(../assets/imgs/fundophelia.png);
@@ -20,66 +21,76 @@ html {
 
 /* ----------- navbar --------------*/
 nav {
-    display: flex;
-    padding: 24px 6%;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    z-index: 10;
+  display: flex;
+  padding: 24px 6%;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 10;
 }
+
 nav img {
-    width: 250px;
+  width: 250px;
 }
+
 .nav-links {
-    flex: 1;
-    text-align: right;
+  flex: 1;
+  text-align: right;
 }
+
 .nav-links ul li {
-    list-style: none;
-    display: inline-block;
-    padding: 8px 12px;
-    position: relative;
+  list-style: none;
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
 }
+
 .nav-links ul li a {
-    color: #b47e3b;
-    text-decoration: none;
-    font-size: 15px;
-    font-family: 'Playfair Display', sans-serif;
-    padding: 8px 16px;
-    border-radius: 20px;
-    border: 1px solid transparent;
-    transition: all 0.3s ease;
+  color: #b47e3b;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: 'Playfair Display', sans-serif;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
 }
+
 .nav-links ul li a:hover {
-    border: 1px solid #b47e3b;
-    background-color: rgba(180, 126, 59, 0.18);
-    transform: translateY(-2px);
+  border: 1px solid #b47e3b;
+  background-color: rgba(180, 126, 59, 0.18);
+  transform: translateY(-2px);
 }
- 
-.text-box{
+
+.text-box {
   width: 90%;
   color: #ffffff;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   text-align: center;
 }
-.text-box h1{
+
+.text-box h1 {
   font-size: 40px;
   font-family: 'Playfair Display', serif;
 }
+
 .showgirl {
   font-family: "League Gothic", serif;
   font-size: 40px;
-  color: #ffd665; /* dourado — estética das Eras */
+  color: #ffd665;
+  /* dourado — estética das Eras */
 }
-.text-box p{
+
+.text-box p {
   margin: 10px 0 40px;
   font-size: 30px;
   color: beige;
 }
-.sobre-btn{
+
+.sobre-btn {
   display: inline-block;
   text-decoration: none;
   color: beige;
@@ -90,15 +101,15 @@ nav img {
   position: relative;
   cursor: pointer;
   border-radius: 8px;
-} 
-.sobre-btn:hover{
+}
+
+.sobre-btn:hover {
   border: 1px solid beige;
   background: beige;
   transition: 1s;
 }
 
-/* -------- SOBRE O PROJETO -----------------*/
-.heading{
+.heading {
   text-align: center;
   font-size: 4rem;
   color: #ffffff;
@@ -107,9 +118,10 @@ nav img {
   background: rgba(255, 51, 153, 05);
 }
 
-.heading{
+.heading {
   font-size: 3rem;
 }
+
 .mirrorball {
   width: 100px;
   height: 100px;
@@ -118,7 +130,8 @@ nav img {
   display: inline-block;
   animation: girar 4s linear infinite;
 }
-.projeto .row{
+
+.projeto .row {
   display: flex;
   align-items: center;
   gap: 40px;
@@ -130,19 +143,22 @@ nav img {
   box-shadow: 0 8px 32px rgba(180, 126, 59, 0.767);
   border: 1px solid rgb(180, 126, 59);
 }
-.projeto .row .video-container{
+
+.projeto .row .video-container {
   flex: 1 1 40rem;
   position: relative;
 }
-.projeto .row .video-container video{
+
+.projeto .row .video-container video {
   width: 80%;
   border: 3px solid #251503;
   border-radius: 5rem;
-  box-shadow: 0 .5 rem 1rem  rgba(0, 0, 0,.1 );
+  box-shadow: 0 .5 rem 1rem rgba(0, 0, 0, .1);
   height: 80%;
   object-fit: cover;
 }
-.projeto .row .content{
+
+.projeto .row .content {
   flex: 1 1 40rem;
   background: #c4beb61a;
   border-radius: 10px;
@@ -150,9 +166,11 @@ nav img {
   padding: 70px 30px;
   box-sizing: border-box;
 }
-.about .row .video-container h3{
+
+.about .row .video-container h3 {
   position: absolute;
-  top: 50%; transform: translateY(-50%);
+  top: 50%;
+  transform: translateY(-50%);
   font-size: 3rem;
   background: #14141421;
   width: 100%;
@@ -160,46 +178,53 @@ nav img {
   text-align: center;
   mix-blend-mode: screen;
 
-} 
-.projeto .row .content h3{
+}
+
+.projeto .row .content h3 {
   font-size: 2rem;
   color: #000000;
 }
-.about .row .content p{
+
+.about .row .content p {
   font-size: 1.5 rem;
   color: #ffffff;
   padding: 5rem 0;
   padding-top: 1rem;
   line-height: 1.5;
 }
-/* ------------------------------ BOXES ----------------------------- */
-.boxes{
+
+.boxes {
   width: 80%;
   margin: auto;
   text-align: center;
   padding-top: 100px;
 }
-h1{
+
+h1 {
 
   font-size: 80px;
   font-weight: 600;
   font-family: "Italianno", cursive;
 }
-p{
-  color: #000000;;
+
+p {
+  color: #000000;
+  ;
   font-size: 20px;
   font-weight: 300;
   line-height: 22px;
   padding: 10px;
   font-family: 'Outfit', sans-serif;
 }
-.row{
+
+.row {
   margin-top: 5%;
   display: flex;
   justify-content: space-between;
   gap: 24px;
 }
-.boxes-col{
+
+.boxes-col {
   flex-basis: 31%;
   background: #5732028c;
   border-radius: 10px;
@@ -208,12 +233,14 @@ p{
   box-sizing: border-box;
   transition: 0.5s;
 }
-h3{
+
+h3 {
   text-align: center;
   font-weight: 600;
   margin: 10px;
 }
-.boxes-col:hover{
+
+.boxes-col:hover {
   box-shadow: 0 0 20px 0px rgb(0, 0, 0);
 }
 
@@ -224,19 +251,21 @@ h3{
   padding-top: 100px;
 
 }
-/* lalala q n sabemos */
-.lalala{
+
+.lalala {
   width: 80%;
   margin: auto;
   text-align: center;
   padding-top: 50px;
   padding-bottom: 80px;
 }
-.lalala .row{
+
+.lalala .row {
   gap: 24px;
   align-items: stretch;
 }
-.lalala-col{
+
+.lalala-col {
   flex-basis: 31%;
   border-radius: 16px;
   margin-bottom: 30px;
@@ -244,17 +273,20 @@ h3{
   overflow: hidden;
   aspect-ratio: 1 / 1;
 }
-.lalala-col img{
+
+.lalala-col img {
   width: 100%;
   height: 150%;
   object-fit: cover;
   border-radius: 16px;
   display: block;
-} 
-.lalala h1{
+}
+
+.lalala h1 {
   font-size: 40px;
 }
-.layer{
+
+.layer {
   background: transparent;
   height: 100%;
   width: 100%;
@@ -264,11 +296,12 @@ h3{
   transition: 0.5s;
 }
 
-.layer:hover{
+.layer:hover {
   background: rgba(99, 56, 1, 0.7);
 }
-.layer h3{
-  width: 80% ;
+
+.layer h3 {
+  width: 80%;
   height: 5%;
   font-weight: 500;
   color: #fff;
@@ -280,37 +313,11 @@ h3{
   opacity: 0;
   transition: 1s;
 }
-.layer:hover h3{
+
+.layer:hover h3 {
   bottom: 49%;
   opacity: 1;
 }
-/* FOOTER */
-.footer {
-    padding: 1.25rem 2rem;
-    position: relative;
-    z-index: 5;
-    border-top: 1px solid rgba(180, 126, 59, 0.15);
-}
-.footer .container {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-} 
-.footer h4 {
-    font-size: 0.8rem;
-    font-weight: 400;
-    color: rgba(66, 36, 0, 0.712);
-    font-family: 'Outfit', sans-serif;
-    text-align: center;
-}
-.footer .version {
-    font-size: 0.75rem;
-    color: rgba(180, 126, 59, 0.3);
-    font-family: 'Outfit', sans-serif;
-} 
-
 
 /* ALERTA */
 
@@ -352,17 +359,29 @@ h3{
 }
 
 @keyframes bell {
-  0%   {transform: rotate(25deg)}
-  25%  {transform: rotate(-25deg)}
-  50%  {transform: rotate(25deg)}
-  75%  {transform: rotate(-25deg)}
-  100% {transform: rotate(25deg)}
+  0% {
+    transform: rotate(25deg)
+  }
+
+  25% {
+    transform: rotate(-25deg)
+  }
+
+  50% {
+    transform: rotate(25deg)
+  }
+
+  75% {
+    transform: rotate(-25deg)
+  }
+
+  100% {
+    transform: rotate(25deg)
+  }
 }
 
 
-/* FORMULARIO */
-
-.alerta_erro{
+.alerta_erro {
   display: flex;
   justify-content: flex-end;
 }
@@ -379,7 +398,7 @@ h3{
   margin-right: 10%;
 }
 
-.card_erro #mensagem_erro{
+.card_erro #mensagem_erro {
   font-weight: 500;
   font-size: 20px;
 }
@@ -428,20 +447,16 @@ input {
 }
 
 
-
-/* SIMULADOR */
-
 .simulador {
   color: white;
 }
 
 .simulador .container {
   flex-direction: column;
-  overflow: scroll; 
+  overflow: scroll;
   height: var(--tamanho-simulador);
 }
 
-/* ALERTA */
 
 #alerta {
   position: absolute;
@@ -481,9 +496,23 @@ input {
 }
 
 @keyframes bell {
-  0%   {transform: rotate(25deg)}
-  25%  {transform: rotate(-25deg)}
-  50%  {transform: rotate(25deg)}
-  75%  {transform: rotate(-25deg)}
-  100% {transform: rotate(25deg)}
+  0% {
+    transform: rotate(25deg)
+  }
+
+  25% {
+    transform: rotate(-25deg)
+  }
+
+  50% {
+    transform: rotate(25deg)
+  }
+
+  75% {
+    transform: rotate(-25deg)
+  }
+
+  100% {
+    transform: rotate(25deg)
+  }
 }

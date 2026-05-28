@@ -15,31 +15,26 @@
 </head>
 
 <body>
+<div class="janela">
 
-    <nav>
-        <a href="index.html">
+     <div class="header-left">
+        <div class="logo">
             <img src="./assets/logomirrorball.png" alt="mirrorball insights">
-        </a>
-
-        <div class="nav-links">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="trajetoria.html">Trajetória</a></li>
-                <li><a href="eras.html">Eras</a></li>
-                <li><a href="testes.html">Testes</a></li>
-                <li><a href="login.html">Entrar</a></li>
-            </ul>
         </div>
-    </nav>
-
-    <!-- TELA INICIAL -->
-
+        <div class="hello">
+        <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+        </div>
+        <a href="./testes.html" class="btn-nav-active">Testes</a>
+        <a href="./dashboard.html" class="btn-nav">Dashboard</a>
+        <a href="./index.html" class="btn-nav">Home</a>
+        <div class="btn-logout" onclick="limparSessao()">
+            Sair
+        </div>
+    </div>
+    <div class="dash">
     <div id="telaInicial">
-
         <div class="capa">
-
             <div class="capa-decoracao"></div>
-
             <h1 class="titulo-principal">
                 Qual álbum da Taylor Swift você seria?
             </h1>
@@ -55,13 +50,8 @@
         </div>
 
     </div>
-
-    <!-- TELA JOGO -->
-
     <div id="telaJogo" style="display:none">
-
         <div id="caixaQuestao">
-
             <div id="infoQuestao">
                 Questão
                 <span id="spanNumeroDaQuestaoAtual">1</span>
@@ -116,6 +106,11 @@
             <button onclick="fazerOutroQuiz()">Fazer outro Quizz</button>
         </div>
     </div>
+        </div>
+</div>
+<script>
+b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+</script>
     <script src="./js/questoespersonalidade.js"></script>
     <script src="./js/personalidade.js"></script>
 </body>

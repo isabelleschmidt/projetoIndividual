@@ -1,19 +1,21 @@
-* { 
-  margin: 0;
-  padding: 0;
-  font-family: "Playfair Display", serif;
-  box-sizing: border-box;
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Playfair Display", serif;
+    box-sizing: border-box;
 }
-.header{
-  height: 30vh;
-  width: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.712)), url(../assets/imgs/taylorfundoquadro.png);
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  position: relative;
+
+.header {
+    height: 30vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.712)), url(../assets/imgs/taylorfundoquadro.png);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
 
 }
+
 /* ---------------- navbar ---------------*/
 nav {
     display: flex;
@@ -23,19 +25,23 @@ nav {
     position: relative;
     z-index: 10;
 }
+
 nav img {
     width: 250px;
 }
+
 .nav-links {
     flex: 1;
     text-align: right;
 }
+
 .nav-links ul li {
     list-style: none;
     display: inline-block;
     padding: 8px 12px;
     position: relative;
 }
+
 .nav-links ul li a {
     color: #b47e3b;
     text-decoration: none;
@@ -46,33 +52,33 @@ nav img {
     border: 1px solid transparent;
     transition: all 0.3s ease;
 }
+
 .nav-links ul li a:hover {
     border: 1px solid #b47e3b;
     background-color: rgba(180, 126, 59, 0.18);
     transform: translateY(-2px);
 }
- 
-/* ----------------- LINHA DO TEMPO --------------*/
 
 .main {
-  width: 100%;
-  height: auto;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.712), rgba(0, 0, 0, 0.712)), url(../assets/imgs/taylorfundoquadro.png);
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  display: grid;
-  place-items: center;
-  padding: -35px;
+    width: 100%;
+    height: auto;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.712), rgba(0, 0, 0, 0.712)), url(../assets/imgs/taylorfundoquadro.png);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: grid;
+    place-items: center;
+    padding: -35px;
 }
 
-.main .heading{
+.main .heading {
     font-size: 27px;
     font-weight: 500;
     color: #b47e3b;
     position: relative;
 }
-.heading::after{
+
+.heading::after {
     position: absolute;
     content: '';
     width: 100%;
@@ -82,31 +88,33 @@ nav img {
     background-image: linear-gradient(to right, rgb(165, 136, 82), rgb(66, 43, 1));
     transform: translateX(-50%);
 }
-.main .heading p{
+
+.main .heading p {
     color: #fff;
 }
 
-/* CONTAINER */
-
-.container{
+.container {
     width: 70%;
     position: relative;
     margin: 40px auto;
 }
-.container::after{
+
+.container::after {
     position: absolute;
     content: '';
     width: 2px;
-    height: 100%; 
+    height: 100%;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
     background-image: linear-gradient(to bottom, rgb(161, 136, 83), rgb(95, 67, 7));
 }
-.container ul{
+
+.container ul {
     list-style: none;
 }
-.container ul li{
+
+.container ul li {
     width: 44%;
     height: auto;
     padding: 15px 20px;
@@ -118,17 +126,20 @@ nav img {
     z-index: 2;
     position: relative;
 }
-.container ul li:nth-child(odd){
+
+.container ul li:nth-child(odd) {
     margin-left: 0;
     margin-right: auto;
     clear: both;
 }
-.container ul li:nth-child(even){
+
+.container ul li:nth-child(even) {
     margin-left: auto;
     margin-right: 0;
     clear: both;
-} 
-.container ul li:last-child{
+}
+
+.container ul li:last-child {
     margin-bottom: 0;
 }
 
@@ -150,7 +161,8 @@ nav img {
     margin-bottom: 6px;
     padding-top: 25px;
 }
-.container ul li p{
+
+.container ul li p {
     font-size: 15px;
     color: rgb(255, 255, 255);
     margin: 7px 0;
@@ -165,11 +177,4 @@ nav img {
 
 .container ul li:nth-child(even) .date {
     left: 15px;
-}
-.footer{
-  text-align: center;
-  padding: 40px 24px;
-  border-top: 1px solid rgba(212, 175, 55, 0.1);
-  color: var(--cor-suave);
-  font-size: 0.85rem;
 }

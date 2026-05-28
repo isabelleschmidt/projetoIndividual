@@ -21,7 +21,6 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="trajetoria.html">Trajetória</a></li>
                 <li><a href="eras.html">Eras</a></li>
-                <li><a href="testes.html">Testes</a></li>
                 <li><a href="login.html">Entrar</a></li>
             </ul>
         </div>
@@ -66,16 +65,7 @@
             </div>
  
         </div>
-    </div>
-    <!-- FOOTER -->
-    <div class="footer">
-        <div class="container">
-            <h4>Feito com amor por aluno ♥ SPTech © 2023</h4>
-            <span class="version">v1.0.0</span>
-        </div>
-    </div>
- 
- 
+    </div> 
 </body>
 </html>
 <script>
@@ -83,7 +73,6 @@
  /*function aguardar() {
     document.getElementById('div_aguardar').style.display = 'flex';
 }*/
- 
 function finalizarAguardar(texto) {
     document.getElementById('div_aguardar').style.display = 'none';
     if (texto) {
@@ -113,21 +102,21 @@ function entrar() {
         method: "GET",
         headers: { "Content-Type": "application/json" }
     }).then(function (resposta) {
-
+ 
         if (resposta.status == 200) {
-
-            console.log(resposta.body)
-
+ 
             resposta.json().then(json => {
-                sessionStorage.EMAIL_USUARIO = json.email;
-                sessionStorage.NOME_USUARIO  = json.nome;
-                sessionStorage.ID_USUARIO    = json.idusuario;
+                console.log('Retorno do login:', json)
+ 
+                sessionStorage.EMAIL_USUARIO = json[0].usuario;
+                sessionStorage.NOME_USUARIO  = json[0].nome;
+                sessionStorage.ID_USUARIO    = json[0].idusuario;
  
                 setTimeout(function () {
                     window.location = "./dashboard.html";
                 }, 1000);
             });
-        
+ 
         }
     }).catch(function (erro) {
         console.log(erro);

@@ -69,5 +69,5 @@ const listaDeQuestoes = [
         alternativaB: "Shakespeare",
         alternativaCorreta: "alternativaB"
     }
-
 ];
+

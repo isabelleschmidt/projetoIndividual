@@ -63,13 +63,13 @@ nav img {
 }
 
 body {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.712), rgba(0, 0, 0, 0.712)), url(../assets/imgs/tayeras.png);
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-    color: var(--cor-texto);
-    font-family: 'Outfit', sans-serif;
-    height: 90vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.712), rgba(0, 0, 0, 0.712)), url(../assets/imgs/tayeras.png);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  color: var(--cor-texto);
+  font-family: 'Outfit', sans-serif;
+  height: 90vh;
 }
 
 
@@ -161,7 +161,6 @@ body {
   border-radius: 4px;
 }
 
-/* --- Conteúdo textual --- */
 .album-info {
   flex: 1;
   display: flex;

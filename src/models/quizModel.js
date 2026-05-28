@@ -1,29 +1,144 @@
 var database = require("../database/config");
 
-function salvar(fk_usuario, idquiz, pontuacao, album) {
+// ================================
+// SALVAR RESULTADO DOS QUIZZES
+// ================================
+
+function salvarResultado(pontuacao, fkUsuario, idQuiz, album = null) {
+
+    console.log("ACESSEI O QUIZ MODEL");
 
     var instrucaoSql = `
-        INSERT INTO tentativa (id_tentativa, pontuacao, fk_usuario, idquiz, album)
-        VALUES (UUID(), ${pontuacao}, ${fk_usuario}, ${idquiz}, ${album ? `'${album}'` : null})`;
+        INSERT INTO tentativa
+        (pontuacao, fk_usuario, idQuiz, album)
+        VALUES
+        (${pontuacao},
+         ${fkUsuario},
+         ${idQuiz},
+         ${album ? `'${album}'` : 'NULL'});
+    `;
 
-    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    console.log(instrucaoSql);
+
     return database.executar(instrucaoSql);
 }
 
-function buscarResultado(fk_usuario) {
+// ================================
+// MÉDIA QUIZ QUEM DISSE
+// ================================
+
+function mediaAcertosQuemdisse() {
 
     var instrucaoSql = `
-        SELECT t.pontuacao, t.album, t.idquiz, q.titulo
-        FROM tentativa t
-        JOIN quiz q ON t.idquiz = q.idquiz
-        WHERE t.fk_usuario = ${fk_usuario}
-        ORDER BY t.idquiz`;
+        SELECT
+            COUNT(*) AS total_jogadas,
+            SUM(pontuacao) AS total_acertos,
+            ROUND(AVG(pontuacao), 1) AS media_acertos
+        FROM tentativa
+        WHERE idQuiz = 1;
+    `;
 
-    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+// ================================
+// RANKING ÁLBUNS
+// ================================
+
+function rankingAlbuns() {
+
+    var instrucaoSql = `
+        SELECT
+            album,
+            COUNT(*) AS total_escolhas,
+            ROUND(
+                COUNT(*) * 100.0 /
+                (SELECT COUNT(*) FROM tentativa WHERE idQuiz = 2),
+            1) AS percentual
+
+        FROM tentativa
+
+        WHERE idQuiz = 2
+
+        GROUP BY album
+
+        ORDER BY total_escolhas DESC;
+    `;
+
+    return database.executar(instrucaoSql);
+}
+
+// ================================
+// HISTÓRICO QUEM DISSE
+// ================================
+
+function historicoQuemdisseUsuario(fkUsuario) {
+
+    var instrucaoSql = `
+        SELECT
+            idTentativa,
+            pontuacao
+
+        FROM tentativa
+
+        WHERE fk_usuario = ${fkUsuario}
+        AND idQuiz = 1;
+    `;
+
+    return database.executar(instrucaoSql);
+}
+
+// ================================
+// HISTÓRICO ÁLBUNS
+// ================================
+
+function historicoAlbunsUsuario(fkUsuario) {
+
+    var instrucaoSql = `
+        SELECT
+            idTentativa,
+            album
+
+        FROM tentativa
+
+        WHERE fk_usuario = ${fkUsuario}
+        AND idQuiz = 2;
+    `;
+
+    return database.executar(instrucaoSql);
+}
+
+function buscarResultadosUsuario(fkUsuario) {
+
+    var instrucaoSql = `
+        SELECT
+            idQuiz AS idquiz,
+            pontuacao,
+            album
+
+        FROM tentativa
+
+        WHERE fk_usuario = ${fkUsuario}
+
+        ORDER BY idTentativa DESC;
+    `;
+
+    console.log(instrucaoSql);
+
     return database.executar(instrucaoSql);
 }
 
 module.exports = {
-    salvar,
-    buscarResultado
+
+    salvarResultado,
+
+    mediaAcertosQuemdisse,
+
+    rankingAlbuns,
+
+    historicoQuemdisseUsuario,
+
+    historicoAlbunsUsuario,
+
+    buscarResultadosUsuario
 }

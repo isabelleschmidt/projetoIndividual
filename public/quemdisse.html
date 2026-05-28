@@ -12,20 +12,36 @@
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
         rel="stylesheet">
 </head>
-
-<body onload="onloadEsconder()">
-    <nav>
         <a href="index.html"><img src="./assets/logomirrorball.png" alt="mirrorball insights"></a>
-        <div class="nav-links">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="trajetoria.html">Tragetória</a></li>
-                <li><a href="eras.html">Eras</a></li>
-                <li><a href="testes.html">Testes</a></li>
-                <li><a href="login.html">Entrar</a></li>
-            </ul>
+        <body onload="onloadEsconder()">
+
+<div class="janela">
+
+     <div class="header-left">
+        <div class="logo">
+            <img src="./assets/logomirrorball.png" alt="mirrorball insights">
         </div>
-    </nav>
+        <div class="hello">
+        <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+        </div>
+        <a href="./testes.html" class="btn-nav-active">Testes</a>
+        <a href="./dashboard.html" class="btn-nav">Dashboard</a>
+        <a href="./index.html" class="btn-nav">Home</a>
+        <div class="btn-logout" onclick="limparSessao()">
+            Sair
+        </div>
+    </div>
+    <div class="dash">
+
+        <div class="dash-titulo">
+            <p class="decoracao">Quiz interativo</p>
+            <h1>
+                <em>Taylor Swift</em>
+            </h1>
+            <p>
+                Descubra seus resultados e teste seus conhecimentos.
+            </p>
+        </div>
     <div id="telaInicial">
         <div class="capa">
             <div class="capa-decoracao"></div>
@@ -65,7 +81,7 @@
                     <input type="radio" id="primeiraOpcao" name="option" value="alternativaA" />
                     <label for="primeiraOpcao" id="labelOpcaoUm"></label>
                 </span>
-                <span class="opcao-wrapper">
+                <span claass="opcao-wrapper">
                     <input type="radio" id="segundaOpcao" name="option" value="alternativaB" />
                     <label for="segundaOpcao" id="labelOpcaoDois"></label>
                 </span>
@@ -90,11 +106,12 @@
             <button onclick="fazerOutroQuiz()">Fazer outro Quizz</button>
         </div>
     </div>
-     <div class="footer">
-        Feito com amor por uma swiftie ♥ SPTech © 2026
-      </div>
+</div>
+<script>
+b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+</script>
+</body>
     <script src="./js/questoes.js"></script>
     <script src="./js/jogo.js"></script>
-</body>
-    
+        </div>    
 </html>
