@@ -6,112 +6,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mirrorball insights. | Taylor Swift ou Shakespeare?</title>
     <link rel="stylesheet" href="./css/quemdisse.css">
+    <script src="./js/sessao.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 </head>
-        <a href="index.html"><img src="./assets/logomirrorball.png" alt="mirrorball insights"></a>
-        <body onload="onloadEsconder()">
 
+<body onload="onloadEsconder()">
 <div class="janela">
 
-     <div class="header-left">
+    <div class="header-left">
         <div class="logo">
             <img src="./assets/logomirrorball.png" alt="mirrorball insights">
         </div>
         <div class="hello">
-        <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+            <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
         </div>
         <a href="./testes.html" class="btn-nav-active">Testes</a>
         <a href="./dashboard.html" class="btn-nav">Dashboard</a>
         <a href="./index.html" class="btn-nav">Home</a>
-        <div class="btn-logout" onclick="limparSessao()">
-            Sair
-        </div>
+        <div class="btn-logout" onclick="limparSessao()">Sair</div>
     </div>
+
     <div class="dash">
 
         <div class="dash-titulo">
-            <p class="decoracao">Quiz interativo</p>
-            <h1>
-                <em>Taylor Swift</em>
-            </h1>
-            <p>
-                Descubra seus resultados e teste seus conhecimentos.
-            </p>
-        </div>
-    <div id="telaInicial">
-        <div class="capa">
-            <div class="capa-decoracao"></div>
-            <h1 class="titulo-principal">
-                Quem disse isso?<br>
-                Taylor Swift <span class="ou">ou</span> Shakespeare?
-            </h1>
-            <p class="subtitulo">Tente distinguir a escrita da cantora com a do autor. <br>
-                (É mais difícil do que parece)
-            </p>
-            <button id="btnIniciarQuiz" onclick="iniciarQuiz()">Jogar</button>
-        </div>
-    </div>
-    <div id="telaJogo" style="display:none">
-
-
-        <div id="placar">
-            <span>Acertos: <strong id="spanCertas">0</strong></span>
-            <span>Erros: <strong id="spanErradas">0</strong></span>
+            <p class="decoracao"></p>
+            <h1><em></em></h1>
+            <p></p>
         </div>
 
-        <div id="caixaQuestao">
+        <div id="telaInicial">
+            <div class="capa">
+                <div class="capa-decoracao"></div>
+                <h1 class="titulo-principal">
+                    Quem disse isso?<br>
+                    Taylor Swift <span class="ou">ou</span> Shakespeare?
+                </h1>
+                <p class="subtitulo">
+                    Tente distinguir a escrita da cantora com a do autor.<br>
+                    (É mais difícil do que parece)
+                </p>
+                <button id="btnIniciarQuiz" onclick="iniciarQuiz()">Jogar</button>
+            </div>
+        </div>
 
-            <div id="infoQuestao">
-                Questão <span id="spanNumeroDaQuestaoAtual">1</span> de <span id="qtdQuestoes">10</span>
+        <div id="telaJogo" style="display:none">
+            <div id="placar">
+                <span>Acertos: <strong id="spanCertas">0</strong></span>
+                <span>Erros: <strong id="spanErradas">0</strong></span>
             </div>
 
-            <div id="citacao">
-                <span class="aspas-decorativas">"</span>
-                <p id="spanQuestaoExibida"></p>
-                <span class="aspas-decorativas direita">"</span>
-            </div>
-            <p id="instrucao"><em>Quem disse isso?</em></p>
+            <div id="caixaQuestao">
+                <div id="infoQuestao">
+                    Questão <span id="spanNumeroDaQuestaoAtual">1</span> de <span id="qtdQuestoes">10</span>
+                </div>
 
-            <div id="opcoes">
-                <span class="opcao-wrapper">
-                    <input type="radio" id="primeiraOpcao" name="option" value="alternativaA" />
-                    <label for="primeiraOpcao" id="labelOpcaoUm"></label>
-                </span>
-                <span claass="opcao-wrapper">
-                    <input type="radio" id="segundaOpcao" name="option" value="alternativaB" />
-                    <label for="segundaOpcao" id="labelOpcaoDois"></label>
-                </span>
-            </div>
+                <div id="citacao">
+                    <span class="aspas-decorativas">"</span>
+                    <p id="spanQuestaoExibida"></p>
+                    <span class="aspas-decorativas direita">"</span>
+                </div>
 
-            <div id="botoes">
-                <button onclick="submeter()" id="btnSubmeter">Confirmar resposta</button>
-                <button onclick="avancar()" id="btnProx" disabled>Próxima questão →</button>
-                <button onclick="tentarNovamente()" id="btnTentarNovamente" disabled>Jogar novamente</button>
-                <button onclick="fazerOutroQuiz()" id="fzrOutroQuiz" disabled>Fazer Outro Quizz</button>
-            </div>
+                <p id="instrucao"><em>Quem disse isso?</em></p>
 
+                <div id="opcoes">
+                    <span class="opcao-wrapper">
+                        <input type="radio" id="primeiraOpcao" name="option" value="alternativaA" />
+                        <label for="primeiraOpcao" id="labelOpcaoUm"></label>
+                    </span>
+                    <span class="opcao-wrapper">
+                        <input type="radio" id="segundaOpcao" name="option" value="alternativaB" />
+                        <label for="segundaOpcao" id="labelOpcaoDois"></label>
+                    </span>
+                </div>
+
+                <div id="botoes">
+                    <button onclick="submeter()" id="btnSubmeter">Confirmar resposta</button>
+                    <button onclick="avancar()" id="btnProx" disabled>Próxima questão →</button>
+                    <button onclick="tentarNovamente()" id="btnTentarNovamente" disabled>Jogar novamente</button>
+                    <button onclick="fazerOutroQuiz()" id="fzrOutroQuiz" disabled>Fazer Outro Quizz</button>
+                </div>
+            </div>
         </div>
-    </div>
-    <div id="telaFinal" style="display:none">
-        <div class="capa resultado">
-            <div class="capa-decoracao"></div>
-            <h2>Pontuação Final: </h2>
-            <p id="spanPontuacaoFinal" class="pontuacao-final-texto"></p>
-            <p id="msgFinal" class="mensagem-final"></p>
-            <button onclick="tentarNovamente()">Jogar novamente</button>
-            <button onclick="fazerOutroQuiz()">Fazer outro Quizz</button>
+
+        <div id="telaFinal" style="display:none">
+            <div class="capa resultado">
+                <div class="capa-decoracao"></div>
+                <h2>Pontuação Final:</h2>
+                <p id="spanPontuacaoFinal" class="pontuacao-final-texto"></p>
+                <p id="msgFinal" class="mensagem-final"></p>
+                <button onclick="tentarNovamente()">Jogar novamente</button>
+                <button onclick="fazerOutroQuiz()">Fazer outro Quizz</button>
+            </div>
         </div>
-    </div>
-</div>
+
+    </div><!-- /.dash -->
+</div><!-- /.janela -->
+
 <script>
-b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 </script>
+<script src="./js/questoes.js"></script>
+<script src="./js/jogo.js"></script>
 </body>
-    <script src="./js/questoes.js"></script>
-    <script src="./js/jogo.js"></script>
-        </div>    
 </html>

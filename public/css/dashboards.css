@@ -70,8 +70,6 @@ body {
     font-weight: 700;
     color: var(--cor-destaque);
 }
-
-/* botoes sidebar */
 .btn-nav,
 .btn-nav-active {
     width: 75%;
@@ -205,7 +203,6 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 24px;
 }
-
 .grafico-box {
     background: rgba(46, 26, 6, 0.7);
     border: 1px solid var(--cor-borda);
@@ -215,11 +212,9 @@ body {
     flex-direction: column;
     gap: 16px;
 }
-
 .grafico-box.largo {
     grid-column: 1 / -1;
 }
-
 .grafico-box .grafico-titulo {
     font-family: 'Playfair Display', serif;
     font-size: 1.1rem;
@@ -227,14 +222,12 @@ body {
     border-left: 3px solid var(--cor-destaque);
     padding-left: 12px;
 }
-
 .grafico-box .grafico-subtitulo {
     font-size: 0.8rem;
     color: var(--cor-suave);
     margin-top: -10px;
     padding-left: 15px;
 }
-
 .grafico-box canvas {
     width: 100% !important;
 }

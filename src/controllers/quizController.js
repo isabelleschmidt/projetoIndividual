@@ -32,11 +32,7 @@ const quizModel = require('../models/quizModel');
             res.status(500).json(erro.sqlMessage);
         });
 }
- 
-// ─────────────────────────────────────────────────────────────────────────────
-// POST — Salvar resultado do quiz "Qual álbum da Taylor você seria?"
-// Body esperado: { idTentativa, pontuacao, fk_usuario, album }
-// ─────────────────────────────────────────────────────────────────────────────
+
 function postResultadoQuizAlbuns(req, res) {
 
     var pontuacao = req.body.pontuacao;
@@ -65,10 +61,7 @@ function postResultadoQuizAlbuns(req, res) {
 
             res.status(500).json(erro.sqlMessage);
         });
-}// ─────────────────────────────────────────────────────────────────────────────
-// GET — Média de pontuação no quiz "Quem Disse?" (para o dashboard)
-// ─────────────────────────────────────────────────────────────────────────────
- 
+}
 function getMediaAcertosQuemdisse(req, res) {
     quizModel.mediaAcertosQuemdisse()
         .then(function (resultado) {
@@ -80,10 +73,7 @@ function getMediaAcertosQuemdisse(req, res) {
         });
 }
  
-// ─────────────────────────────────────────────────────────────────────────────
-// GET — Ranking de álbuns mais escolhidos (para o dashboard)
-// ─────────────────────────────────────────────────────────────────────────────
- 
+
 function getRankingAlbuns(req, res) {
     quizModel.rankingAlbuns()
         .then(function (resultado) {
@@ -95,9 +85,6 @@ function getRankingAlbuns(req, res) {
         });
 }
  
-// ─────────────────────────────────────────────────────────────────────────────
-// GET — Histórico do usuário no quiz "Taylor ou Shakespeare?"
-// ─────────────────────────────────────────────────────────────────────────────
  
 function getHistoricoQuemdisse(req, res) {
     var fkUsuario = req.params.fk_usuario;
@@ -114,12 +101,7 @@ function getHistoricoQuemdisse(req, res) {
             console.log(erro);
             res.status(500).json(erro.sqlMessage);
         });
-}
- 
-// ─────────────────────────────────────────────────────────────────────────────
-// GET — Histórico do usuário no quiz "Qual álbum você seria?"
-// ─────────────────────────────────────────────────────────────────────────────
- 
+} 
 function getHistoricoAlbuns(req, res) {
     var fkUsuario = req.params.fk_usuario;
  
@@ -136,10 +118,6 @@ function getHistoricoAlbuns(req, res) {
             res.status(500).json(erro.sqlMessage);
         });
 }
- 
-// ─────────────────────────────────────────────────────────────────────────────
-// GET — Todos os dados dos quizzes de uma vez (para o dashboard)
-// ─────────────────────────────────────────────────────────────────────────────
  
 function getTodosDadosQuiz(req, res) {
     Promise.all([

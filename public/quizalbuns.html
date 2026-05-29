@@ -5,113 +5,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mirrorball insights. | Qual álbum da Taylor Swift você seria?</title>
-
     <link rel="stylesheet" href="./css/quizalbuns.css">
-
+    <script src="./js/sessao.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
 <div class="janela">
 
-     <div class="header-left">
+    <div class="header-left">
         <div class="logo">
             <img src="./assets/logomirrorball.png" alt="mirrorball insights">
         </div>
         <div class="hello">
-        <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+            <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
         </div>
         <a href="./testes.html" class="btn-nav-active">Testes</a>
         <a href="./dashboard.html" class="btn-nav">Dashboard</a>
         <a href="./index.html" class="btn-nav">Home</a>
-        <div class="btn-logout" onclick="limparSessao()">
-            Sair
-        </div>
+        <div class="btn-logout" onclick="limparSessao()">Sair</div>
     </div>
     <div class="dash">
-    <div id="telaInicial">
-        <div class="capa">
-            <div class="capa-decoracao"></div>
-            <h1 class="titulo-principal">
-                Qual álbum da Taylor Swift você seria?
-            </h1>
-
-            <p class="subtitulo">
-                Descubra qual era combina mais com sua personalidade.
-            </p>
-
-            <button onclick="iniciarQuiz()">
-                Começar Quiz
-            </button>
-
+        <div id="telaInicial">
+            <div class="capa">
+                <div class="capa-decoracao"></div>
+                <h1 class="titulo-principal">
+                    Qual álbum da Taylor Swift você seria?
+                </h1>
+                <p class="subtitulo">
+                    Descubra qual era combina mais com sua personalidade.
+                </p>
+                <button onclick="iniciarQuiz()">Começar Quiz</button>
+            </div>
         </div>
-
-    </div>
-    <div id="telaJogo" style="display:none">
-        <div id="caixaQuestao">
-            <div id="infoQuestao">
-                Questão
-                <span id="spanNumeroDaQuestaoAtual">1</span>
-                de
-                <span id="qtdQuestoes">10</span>
+        <div id="telaJogo" style="display:none">
+            <div id="caixaQuestao">
+                <div id="infoQuestao">
+                    Questão
+                    <span id="spanNumeroDaQuestaoAtual">1</span>
+                    de
+                    <span id="qtdQuestoes">10</span>
+                </div>
+                <div id="citacao">
+                    <p id="spanQuestaoExibida"></p>
+                </div>
+                <p id="instrucao"><em>Escolha a alternativa que mais transmite sua vibe!! </em></p>
+                <div id="opcoes">
+                    <span class="opcao-wrapper">
+                        <input type="radio" id="primeiraOpcao" name="option" value="alternativaA">
+                        <label for="primeiraOpcao" id="labelOpcaoUm"></label>
+                    </span>
+                    <span class="opcao-wrapper">
+                        <input type="radio" id="segundaOpcao" name="option" value="alternativaB">
+                        <label for="segundaOpcao" id="labelOpcaoDois"></label>
+                    </span>
+                    <span class="opcao-wrapper">
+                        <input type="radio" id="terceiraOpcao" name="option" value="alternativaC">
+                        <label for="terceiraOpcao" id="labelOpcaoTres"></label>
+                    </span>
+                    <span class="opcao-wrapper">
+                        <input type="radio" id="quartaOpcao" name="option" value="alternativaD">
+                        <label for="quartaOpcao" id="labelOpcaoQuatro"></label>
+                    </span>
+                </div>
+                <div id="botoes">
+                    <button onclick="submeter()">Próxima questão →</button>
+                </div>
             </div>
-
-            <div id="citacao">
-                <p id="spanQuestaoExibida"></p>
-            </div>
-            <p id="instrucao">
-                <em>Escolha a alternativa que mais combina com você.</em>
-            </p>
-
-            <div id="opcoes">
-
-                <span class="opcao-wrapper">
-                    <input type="radio" id="primeiraOpcao" name="option" value="alternativaA">
-                    <label for="primeiraOpcao" id="labelOpcaoUm"></label>
-                </span>
-
-                <span class="opcao-wrapper">
-                    <input type="radio" id="segundaOpcao" name="option" value="alternativaB">
-                    <label for="segundaOpcao" id="labelOpcaoDois"></label>
-                </span>
-
-                <span class="opcao-wrapper">
-                    <input type="radio" id="terceiraOpcao" name="option" value="alternativaC">
-                    <label for="terceiraOpcao" id="labelOpcaoTres"></label>
-                </span>
-
-                <span class="opcao-wrapper">
-                    <input type="radio" id="quartaOpcao" name="option" value="alternativaD">
-                    <label for="quartaOpcao" id="labelOpcaoQuatro"></label>
-                </span>
-
-            </div>
-            <div id="botoes">
-                <button onclick="submeter()">
-                Próxima questão →
-                </button>
+        </div>
+        <div id="telaFinal" style="display:none">
+            <div class="capa resultado">
+                <div class="capa-decoracao"></div>
+                <h2>Resultado:</h2>
+                <p id="spanPontuacaoFinal" class="pontuacao-final-texto"></p>
+                <p id="msgFinal" class="mensagem-final"></p>
+                <button onclick="tentarNovamente()">Jogar novamente</button>
+                <button onclick="fazerOutroQuiz()">Fazer outro Quizz</button>
             </div>
         </div>
     </div>
-    <div id="telaFinal" style="display:none">
-        <div class="capa resultado">
-            <div class="capa-decoracao"></div>
-            <h2>Resultado:</h2>
-            <p id="spanPontuacaoFinal" class="pontuacao-final-texto"></p>
-            <p id="msgFinal" class="mensagem-final"></p>
-            <button onclick="tentarNovamente()">Jogar novamente</button>
-            <button onclick="fazerOutroQuiz()">Fazer outro Quizz</button>
-        </div>
-    </div>
-        </div>
 </div>
 <script>
-b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 </script>
-    <script src="./js/questoespersonalidade.js"></script>
-    <script src="./js/personalidade.js"></script>
+<script src="./js/questoespersonalidade.js"></script>
+<script src="./js/personalidade.js"></script>
 </body>
 </html>

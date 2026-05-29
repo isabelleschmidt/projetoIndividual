@@ -1,12 +1,10 @@
 :root {
-
-    --cor-fundo: #2e1a06;
-    --cor-fundo-caixa: #4a2c0a;
-    --cor-fundo-nav: transparent;
+    --cor-fundo: #1a0d02;
+    --cor-lateral: #120900;
+    --cor-caixa: #2e1a06;
+    --cor-borda: rgba(180, 126, 59, 0.3);
     --cor-texto: #f5e6cc;
-    --cor-texto-suave: #c9a876;
-
-
+    --cor-suave: #c9a876;
     --cor-destaque: #d4af37;
     --cor-destaque-2: #b47e3b;
 
@@ -19,13 +17,12 @@
     --danger: #dc3545;
     --danger-dark: #990c19;
     --danger-light: #f0c1c6;
+    
 }
-
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Playfair Display', serif;
 }
 
 body {
@@ -33,12 +30,11 @@ body {
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
-    position: relative;
     color: var(--cor-texto);
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    font-family: 'Outfit', sans-serif;
 }
+
 .janela {
     display: flex;
     min-height: 100vh;
@@ -51,7 +47,7 @@ body {
     width: 220px;
     height: 100vh;
     background-color: rgba(18, 9, 0, 0.95);
-    border-right: 1px solid rgba(180, 126, 59, 0.3);
+    border-right: 1px solid var(--cor-borda);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -60,20 +56,30 @@ body {
     z-index: 100;
 }
 
+.header-left .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--cor-destaque);
+    text-align: center;
+    letter-spacing: 1px;
+    padding: 0 16px;
+}
+
 .header-left .logo img {
     width: 210px;
 }
 
 .hello h3 {
-    color: #c9a876;
+    color: var(--cor-suave);
     font-weight: 300;
     font-size: 0.95rem;
     text-align: center;
+    font-family: 'Playfair Display', serif;
 }
 
 .hello h3 span {
     font-weight: 700;
-    color: #d4af37;
+    color: var(--cor-destaque);
 }
 
 .btn-nav,
@@ -88,21 +94,21 @@ body {
 }
 
 .btn-nav {
-    border: 1px solid rgba(180, 126, 59, 0.3);
-    color: #c9a876;
+    border: 1px solid var(--cor-borda);
+    color: var(--cor-suave);
     font-size: 0.85rem;
     letter-spacing: 1px;
 }
 
 .btn-nav:hover {
-    border-color: #d4af37;
-    color: #d4af37;
+    border-color: var(--cor-destaque);
+    color: var(--cor-destaque);
     background: rgba(212, 175, 55, 0.08);
 }
 
 .btn-nav-active {
-    background: #d4af37;
-    color: #1a0d02;
+    background: var(--cor-destaque);
+    color: var(--cor-fundo);
     font-weight: 700;
     font-size: 0.85rem;
     letter-spacing: 1px;
@@ -114,7 +120,7 @@ body {
     padding: 10px 16px;
     border-radius: 6px;
     background: rgba(212, 175, 55, 0.08);
-    color: #b47e3b;
+    color: var(--cor-destaque-2);
     font-size: 0.85rem;
     cursor: pointer;
     transition: all 0.2s;
@@ -128,14 +134,42 @@ body {
     margin-left: 220px;
     width: calc(100% - 220px);
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
 }
 
-.conteudo {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 16px;
+.dash-titulo {
+    margin-bottom: 32px;
+    border-bottom: 1px solid var(--cor-borda);
+    padding-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+}
+
+.dash-titulo .decoracao {
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--cor-destaque);
+    margin-bottom: 8px;
+}
+
+.dash-titulo h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--cor-texto);
+}
+
+.dash-titulo h1 em {
+    font-style: italic;
+    color: var(--cor-destaque);
+}
+
+.dash-titulo p {
+    color: var(--cor-suave);
+    font-size: 0.9rem;
+    margin-top: 8px;
 }
 
 #telaInicial,
@@ -143,9 +177,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
     flex: 1;
-    padding: 40px 24px;
+    padding: 24px 0;
 }
 
 .capa {
@@ -164,7 +197,8 @@ body {
 }
 
 .titulo-principal {
-    font-size: 3rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem;
     line-height: 1.2;
     color: var(--cor-texto);
 }
@@ -176,7 +210,7 @@ body {
 }
 
 .subtitulo {
-    color: var(--cor-texto-suave);
+    color: var(--cor-suave);
     font-size: 1rem;
     font-style: italic;
 }
@@ -191,6 +225,15 @@ body {
     font-size: 1.1rem;
     padding: 12px 20px;
     border-radius: 8px;
+}
+
+#telaJogo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 24px 40px;
+    width: 100%;
+    gap: 24px;
 }
 
 button {
@@ -218,27 +261,16 @@ button:disabled {
     cursor: default;
 }
 
-#telaJogo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 24px;
-    width: 100%;
-    flex: 1;
-    gap: 24px;
-}
-
 #placar {
     display: flex;
     gap: 32px;
     font-size: 0.9rem;
     letter-spacing: 1px;
-    color: var(--cor-texto-suave);
+    color: var(--cor-suave);
     border: 1px solid var(--cor-destaque-2);
     padding: 8px 24px;
     border-radius: 100px;
-    background: var(--cor-fundo-caixa);
+    background: rgba(46, 26, 6, 0.7);
 }
 
 #placar strong {
@@ -251,7 +283,7 @@ button:disabled {
     gap: 14px;
     max-width: 440px;
     width: 100%;
-    background: var(--cor-fundo-caixa);
+    background: rgba(46, 26, 6, 0.7);
     border: 1px solid var(--cor-destaque-2);
     border-radius: 12px;
     padding: 20px;
@@ -260,7 +292,7 @@ button:disabled {
 #infoQuestao {
     font-family: 'Playfair Display', serif;
     font-size: 0.8rem;
-    color: var(--cor-texto-suave);
+    color: var(--cor-suave);
     letter-spacing: 2px;
     text-transform: uppercase;
 }
@@ -271,20 +303,8 @@ button:disabled {
     border-left: 3px solid var(--cor-destaque);
 }
 
-.aspas-decorativas {
-    font-size: 4rem;
-    line-height: 0;
-    vertical-align: -0.6em;
-    color: var(--cor-destaque);
-    font-family: Georgia, serif;
-    opacity: 0.4;
-}
-
-.aspas-decorativas.direita {
-    float: right;
-}
-
 #spanQuestaoExibida {
+    font-family: 'Playfair Display', serif;
     font-size: 1.15rem;
     font-style: italic;
     line-height: 1.7;
@@ -292,7 +312,7 @@ button:disabled {
 }
 
 #instrucao {
-    color: var(--cor-texto-suave);
+    color: var(--cor-suave);
     font-size: 0.9rem;
 }
 
@@ -322,7 +342,7 @@ button:disabled {
     border-color: var(--cor-destaque);
 }
 
-.opcao-wrapper input[type="radio"]:checked+label {
+.opcao-wrapper input[type="radio"]:checked + label {
     background: rgba(212, 175, 55, 0.15);
     border-color: var(--cor-destaque);
     color: var(--cor-destaque);
